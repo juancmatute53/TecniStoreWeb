@@ -1,5 +1,13 @@
 <mat-toolbar color="primary">
-    <span><a mat-icon-button routerLink="/">TecniStore</a></span>
-    <span class="example-spacer"></span>
-    <a mat-icon-button routerLink="/login">Salir</a>
+  <span routerLink="/" class="tamano"> TecniStore</span>
+
+
+  <div class="spacer"></div>
+
+  <a mat-button matTooltip="Casa" class="tamano"><i class="fa fa-home"></i></a>
+  <a mat-button matTooltip="Productos" class="tamano"><i class="fa fa-desktop"></i></a>
+  <a mat-button matTooltip="Categoria" class="tamano"><i class="fa fa-list-alt"></i></a>
+  <a mat-raised-button  matTooltip="Salir" color="accent" class="tamano" routerLink="/login"><i class="fa fa-sign-out"></i></a>
+
 </mat-toolbar>
+
