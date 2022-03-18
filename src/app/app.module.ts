@@ -10,10 +10,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatToolbarModule} from '@angular/material/toolbar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input'
 import { FormsModule } from '@angular/forms'
+import { MatMenuModule} from '@angular/material/menu';
+import { ProductoComponent } from './components/producto/producto.component';
+import { FacturasComponent } from './components/facturas/facturas.component'
 
 
 @NgModule({
@@ -23,6 +26,8 @@ import { FormsModule } from '@angular/forms'
     HomeComponent,
     LoginComponent,
     DashboardComponent,
+    ProductoComponent,
+    FacturasComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,8 +37,9 @@ import { FormsModule } from '@angular/forms'
     RouterModule,
     MatToolbarModule,
     MatFormFieldModule,
+    MatMenuModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

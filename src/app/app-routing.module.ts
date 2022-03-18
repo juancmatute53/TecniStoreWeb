@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { FacturasComponent } from './components/facturas/facturas.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { ProductoComponent } from './components/producto/producto.component';
 
 const routes: Routes = [
 
@@ -20,7 +22,18 @@ const routes: Routes = [
     path:"dashboard",
     component:DashboardComponent,
     pathMatch:"full"
+  },
+  {
+    path:"producto",
+    component:ProductoComponent,
+    pathMatch:"full"
+  },
+  {
+    path:"facturas",
+    component:FacturasComponent,
+    pathMatch:"full"
   }
+
 
 ];
 
