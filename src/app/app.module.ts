@@ -17,6 +17,10 @@ import { FormsModule } from '@angular/forms'
 import { MatMenuModule} from '@angular/material/menu';
 import { ProductoComponent } from './components/producto/producto.component';
 import { FacturasComponent } from './components/facturas/facturas.component'
+import {MatTreeModule} from '@angular/material/tree';
+import { ProductosComponent } from './components/productos/productos.component';
+import {HttpClientModule} from "@angular/common/http";
+import {FormproductosComponent} from "./components/productos/formproductos.component";
 
 
 @NgModule({
@@ -28,6 +32,8 @@ import { FacturasComponent } from './components/facturas/facturas.component'
     DashboardComponent,
     ProductoComponent,
     FacturasComponent,
+    ProductosComponent,
+    FormproductosComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,6 +46,8 @@ import { FacturasComponent } from './components/facturas/facturas.component'
     MatMenuModule,
     MatInputModule,
     FormsModule,
+    MatTreeModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

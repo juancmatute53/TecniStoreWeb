@@ -1,0 +1,86 @@
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+          aria-expanded="false">
+    AGREGAR PRODUCTO
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <app-formproductos></app-formproductos>
+    <!--
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+      <div class="col" *ngFor="let productos0 of productos1; let i=index">
+        <div class="card bg-info" *ngIf="i===i">
+          <div class="card-header">{{productos0.idProducto}}) {{productos0.nombre}}</div>
+          <img src="{{productos0.fotoUrl}}" class="card-img-top" alt="..." width="50px">
+          <div class="card-body">
+            <p class="card-text"> Descipcion: {{productos0.descripcion}}</p>
+            <p class="card-text"> Costo: {{productos0.precio}} $</p>
+            <p class="card-text"> Stock: {{productos0.stock}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    -->
+  </ul>
+</div>
+
+<br><br>
+
+
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+          aria-expanded="false">
+    LISTAR PRODUCTOS
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+
+    <table class="table">
+      <thead>
+      <tr>
+        <th>id</th>
+        <th>NOMBRE</th>
+        <th>PRECIO</th>
+        <th>DESCRIPCION</th>
+        <th>STOCK</th>
+        <th>EDITAR</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr *ngFor="let productos2 of productos1">
+        <td>{{productos2.idProducto}}</td>
+        <td>{{productos2.nombre}}</td>
+        <td>{{productos2.precio}}</td>
+        <td>{{productos2.descripcion}}</td>
+        <td>{{productos2.stock}}
+        <td> <button type="button"  name="button" class="btn btn-primary" routerLink="/producto/form/{{productos2.idProducto}}"  >EDITAR</button> </td>
+      </tr>
+      </tbody>
+    </table>
+
+  </ul>
+</div>
+
+<br><br>
+
+
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+          aria-expanded="false">
+    MOSTRAR TODOS LOS PRODUCTOS
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+      <div class="col" *ngFor="let productos0 of productos1; let i=index">
+        <div class="card bg-info" *ngIf="i===i">
+          <div class="card-header">{{productos0.idProducto}}) {{productos0.nombre}}</div>
+          <img src="{{productos0.fotoUrl}}" class="card-img-top" alt="..." width="50px">
+          <div class="card-body">
+            <p class="card-text"> Descipcion: {{productos0.descripcion}}</p>
+            <p class="card-text"> Costo: {{productos0.precio}} $</p>
+            <p class="card-text"> Stock: {{productos0.stock}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ul>
+</div>
