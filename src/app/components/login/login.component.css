@@ -1,3 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@1,300&family=Montserrat:wght@700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    font-size: 30px;
+    font-family: 'Montserrat' ;
+}
+
 .full-width{
     width: 100%;
+}
+
+.bootstrap-wrapper{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url(\src\assets\tecni5.jpg);
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+}
+
+button{
+    display: inline-block;
+    padding: 10px 30px;
+    color: white;
+    background-color: transparent;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    margin-top: 30px;
+    transition: .3s ease;
+    transition-property: background-color, color;
 }

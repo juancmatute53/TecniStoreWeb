@@ -3,8 +3,10 @@ import {Productos} from "./productos";
 import {ProductosService} from "./productos.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import Swal from 'sweetalert2'
+
 import {Categorias} from "../categorias/categorias";
 import {CategoriasService} from "../categorias/categorias.service";
+
 
 @Component({
   selector: 'app-formproductos',
@@ -13,6 +15,7 @@ import {CategoriasService} from "../categorias/categorias.service";
 export class FormproductosComponent implements OnInit {
 
   public productos: Productos = new Productos();
+
 
   categorias1 :Categorias[] = []
 
@@ -23,6 +26,12 @@ export class FormproductosComponent implements OnInit {
     this.categoriasService.getCategorias().subscribe(
       categorias1 => this.categorias1 =categorias1
     );
+
+
+  constructor(private productosService:ProductosService, private router :Router, private activatedRoute:ActivatedRoute) { }
+
+  ngOnInit(): void {
+    this.cargar();
 
   }
 
@@ -46,6 +55,12 @@ export class FormproductosComponent implements OnInit {
         Swal.fire('Producto modificado', `Cliente ${productos.nombre} guardado con exito`, 'success')
       }
     )
+
+    /*
+    localStorage.setItem("id",producto.idProducto.toString());
+    this.router.navigate(["form"])
+    /*producto:Productos*/
+
   }
 
   cargar():void{
@@ -61,6 +76,7 @@ export class FormproductosComponent implements OnInit {
       }
     );
   }
+
 
   Regresar() :void{
       this.router.navigate(['/producto'])
