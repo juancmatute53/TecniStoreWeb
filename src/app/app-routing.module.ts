@@ -1,3 +1,10 @@
+
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
+
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {DashboardComponent} from './components/dashboard/dashboard.component';
@@ -6,6 +13,9 @@ import {HomeComponent} from './components/home/home.component';
 import {LoginComponent} from './components/login/login.component';
 import {ProductoComponent} from './components/producto/producto.component';
 import {FormproductosComponent} from "./components/productos/formproductos.component";
+
+import {CategoriaComponent} from "./components/categoria/categoria.component";
+
 
 const routes: Routes = [
 
@@ -20,6 +30,12 @@ const routes: Routes = [
     //pathMatch: "full"
   },
   {
+
+    path:"dashboard",
+    component:DashboardComponent,
+    pathMatch:"full"
+  }
+
     path: "dashboard",
     component: DashboardComponent,
     //pathMatch: "full"
@@ -35,6 +51,22 @@ const routes: Routes = [
     //pathMatch: "full"
   },
   {
+
+    path: "producto/:id",
+    component: ProductoComponent,
+    //pathMatch: "full"
+  },
+  {
+    path: "categoria",
+    component: CategoriaComponent,
+    //pathMatch: "full"
+  },
+  {
+    path: "categoria/:id",
+    component: CategoriaComponent,
+    //pathMatch: "full"
+  },
+
     path: "producto/form/:id",
     component: FormproductosComponent,
     //pathMatch: "full"

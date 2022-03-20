@@ -13,6 +13,16 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MatToolbarModule} from '@angular/material/toolbar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input'
+
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
+import {HttpClientModule} from "@angular/common/http";
+
+import {MatTooltipModule} from "@angular/material/tooltip";
+
+import {FormproductosComponent} from "./components/productos/formproductos.component";
+import { CategoriaComponent } from './components/categoria/categoria.component';
+import { CategoriasComponent } from './components/categorias/categorias.component';
+
 import { FormsModule } from '@angular/forms'
 import { MatMenuModule} from '@angular/material/menu';
 import { ProductoComponent } from './components/producto/producto.component';
@@ -30,10 +40,15 @@ import {FormproductosComponent} from "./components/productos/formproductos.compo
     HomeComponent,
     LoginComponent,
     DashboardComponent,
+
     ProductoComponent,
     FacturasComponent,
     ProductosComponent,
     FormproductosComponent,
+
+    CategoriaComponent,
+    CategoriasComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -46,8 +61,14 @@ import {FormproductosComponent} from "./components/productos/formproductos.compo
     MatMenuModule,
     MatInputModule,
     FormsModule,
+
+    HttpClientModule,
+    ReactiveFormsModule,
+    MatTooltipModule
+
     MatTreeModule,
     HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
