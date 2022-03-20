@@ -24,15 +24,8 @@ export class FormproductosComponent implements OnInit {
   ngOnInit(): void {
     this.cargar();
     this.categoriasService.getCategorias().subscribe(
-      categorias1 => this.categorias1 =categorias1
+      categorias1 => this.categorias1 = categorias1
     );
-
-
-  constructor(private productosService:ProductosService, private router :Router, private activatedRoute:ActivatedRoute) { }
-
-  ngOnInit(): void {
-    this.cargar();
-
   }
 
   public create(): void {
