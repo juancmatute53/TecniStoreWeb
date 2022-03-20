@@ -10,7 +10,8 @@ import {CategoriasService} from "../categorias/categorias.service";
 
 @Component({
   selector: 'app-formproductos',
-  templateUrl: './formproductos.component.html'
+  templateUrl: './formproductos.component.html',
+  styleUrls: ['./productos.component.css']
 })
 export class FormproductosComponent implements OnInit {
 
@@ -19,6 +20,8 @@ export class FormproductosComponent implements OnInit {
 
   categorias1 :Categorias[] = []
 
+  selected: string = '';
+
   constructor(private productosService:ProductosService, private router :Router, private activatedRoute:ActivatedRoute, private categoriasService :CategoriasService) { }
 
   ngOnInit(): void {
@@ -26,6 +29,8 @@ export class FormproductosComponent implements OnInit {
     this.categoriasService.getCategorias().subscribe(
       categorias1 => this.categorias1 = categorias1
     );
+
+
   }
 
   public create(): void {
@@ -34,7 +39,7 @@ export class FormproductosComponent implements OnInit {
     this.productosService.create(this.productos).subscribe(productos => {
 
         this.router.navigate(['/producto'])
-        Swal.fire('Producto guardado', `Cliente ${productos.nombre} guardado con exito`, 'success')
+        Swal.fire('Producto guardado', `Producto ${productos.nombre} guardado con exito`, 'success')
       }
     )
   }
@@ -45,15 +50,9 @@ export class FormproductosComponent implements OnInit {
     this.productosService.updateProductos(this.productos).subscribe(
       productos=>{
         this.router.navigate(['/producto'])
-        Swal.fire('Producto modificado', `Cliente ${productos.nombre} guardado con exito`, 'success')
+        Swal.fire('Producto modificado', `Producto ${productos.nombre} modificado con exito`, 'success')
       }
     )
-
-    /*
-    localStorage.setItem("id",producto.idProducto.toString());
-    this.router.navigate(["form"])
-    /*producto:Productos*/
-
   }
 
   cargar():void{

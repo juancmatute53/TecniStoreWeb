@@ -28,6 +28,9 @@ import { ProductoComponent } from './components/producto/producto.component';
 import { FacturasComponent } from './components/facturas/facturas.component'
 import {MatTreeModule} from '@angular/material/tree';
 import { ProductosComponent } from './components/productos/productos.component';
+import {MatOptionModule} from "@angular/material/core";
+import {MatSelectModule} from "@angular/material/select";
+
 
 
 @NgModule({
@@ -65,6 +68,8 @@ import { ProductosComponent } from './components/productos/productos.component';
 
     MatTreeModule,
     HttpClientModule,
+    MatOptionModule,
+    MatSelectModule,
 
   ],
   providers: [],
