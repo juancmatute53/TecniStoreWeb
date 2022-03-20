@@ -15,7 +15,13 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input'
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import {HttpClientModule} from "@angular/common/http";
+<<<<<<< Updated upstream
 import {MatTooltipModule} from "@angular/material/tooltip";
+=======
+import {FormproductosComponent} from "./components/productos/formproductos.component";
+import { CategoriaComponent } from './components/categoria/categoria.component';
+import { CategoriasComponent } from './components/categorias/categorias.component';
+>>>>>>> Stashed changes
 
 
 @NgModule({
@@ -25,6 +31,15 @@ import {MatTooltipModule} from "@angular/material/tooltip";
     HomeComponent,
     LoginComponent,
     DashboardComponent,
+<<<<<<< Updated upstream
+=======
+    ProductoComponent,
+    FacturasComponent,
+    ProductosComponent,
+    FormproductosComponent,
+    CategoriaComponent,
+    CategoriasComponent,
+>>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,
