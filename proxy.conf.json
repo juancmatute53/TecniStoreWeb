@@ -1,0 +1,6 @@
+{
+  "/usuario": {
+    "target": "https://tecnistoreaapi.rj.r.appspot.com",
+    "secure": false,
+  }
+}
