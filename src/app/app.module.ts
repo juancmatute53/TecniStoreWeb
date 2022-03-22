@@ -30,6 +30,7 @@ import {MatTreeModule} from '@angular/material/tree';
 import { ProductosComponent } from './components/productos/productos.component';
 import {MatOptionModule} from "@angular/material/core";
 import {MatSelectModule} from "@angular/material/select";
+import { FilterPipe } from './components/pipes/filter.pipe';
 
 
 
@@ -40,14 +41,13 @@ import {MatSelectModule} from "@angular/material/select";
     HomeComponent,
     LoginComponent,
     DashboardComponent,
-
     ProductoComponent,
     FacturasComponent,
     ProductosComponent,
     FormproductosComponent,
-
     CategoriaComponent,
     CategoriasComponent,
+    FilterPipe,
 
   ],
   imports: [
@@ -61,11 +61,9 @@ import {MatSelectModule} from "@angular/material/select";
     MatMenuModule,
     MatInputModule,
     FormsModule,
-
     HttpClientModule,
     ReactiveFormsModule,
     MatTooltipModule,
-
     MatTreeModule,
     HttpClientModule,
     MatOptionModule,

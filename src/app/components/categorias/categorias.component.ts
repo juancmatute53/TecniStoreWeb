@@ -69,6 +69,11 @@ export class CategoriasComponent implements OnInit {
       }
     )
   }
+
+  this.categoriasService.getCategoriasById(categorias1.id).subscribe(
+      categorias1 => this.categorias1 = categorias1
+    );
+
    */
 
 }

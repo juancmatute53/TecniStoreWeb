@@ -1,9 +1,10 @@
-
 <div class="card-group">
   <div class="card text-dark bg-info mb-3">
     <div class="card-header"><h1>Listar Productos</h1></div>
     <div class="card-body">
 
+      <input type="text" class="form-control" name="filterPost" placeholder="Buscador..." [(ngModel)]="filterPost">
+      <br>
 
       <table class="table table-light ">
         <thead>
@@ -11,19 +12,25 @@
           <th>id</th>
           <th>NOMBRE</th>
           <th>IMAGEN</th>
-          <th>PRECIO</th>
-          <th>DESCRIPCION</th>
+          <th>PRECIO</th><th >CATEGORIA</th>
+          <th >DESCRIPCION</th>
           <th>STOCK</th>
           <th>EDITAR</th>
         </tr>
         </thead>
 
         <tbody>
-        <tr *ngFor="let productos2 of productos1">
+        <tr *ngFor="let productos2 of productos1 | filter:filterPost">
           <td>{{productos2.idProducto}}</td>
           <td>{{productos2.nombre}}</td>
           <td><img src="{{productos2.fotoUrl}}" width="50px"></td>
-          <td>{{productos2.precio}} $</td>
+          <td> {{productos2.precio}} $</td>
+          <br>
+          <div id="categorias">
+            <td *ngFor="let categorias2 of categorias1 "><p
+              *ngIf="(categorias2.idCategoria)===(productos2.idCategoria)">  {{categorias2.nombre  }}</p></td>
+          </div>
+
           <td>{{productos2.descripcion}}</td>
           <td>{{productos2.stock}}
           <td>
@@ -47,3 +54,6 @@
   </div>
 </div>
 
+<!--
+{{categoriasService.getCategoriasById(productos2.idCategoria) |async |json }}
+-->

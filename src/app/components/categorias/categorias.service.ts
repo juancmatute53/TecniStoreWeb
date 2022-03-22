@@ -8,7 +8,7 @@ import {Categorias} from "./categorias";
 })
 export class CategoriasService {
 
-  private urlEndPoint: string = "http://localhost:8080/categoria";
+  private urlEndPoint: string = "https://tecnistoreaapi.rj.r.appspot.com:443/categoria";
 
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'})
 
@@ -25,10 +25,16 @@ export class CategoriasService {
 
   getCategoriasId(id:number){
     return this.http.get<Categorias>(this.urlEndPoint+"/"+id);
-
   }
+
   updateCategorias(categorias :Categorias){
     return this.http.put<Categorias>(this.urlEndPoint+"/update/"+categorias.idCategoria,categorias);
   }
+
+  getCategoriasById(id:number): Observable<Categorias[]>{
+    return this.http.get<Categorias[]>(this.urlEndPoint+"/"+id).pipe(map(response => response as Categorias[]));;
+  }
+
+
 
 }

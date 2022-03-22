@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Productos} from "./productos";
 import {ProductosService} from "./productos.service";
 import {ActivatedRoute, Router} from "@angular/router";
@@ -18,11 +18,12 @@ export class FormproductosComponent implements OnInit {
   public productos: Productos = new Productos();
 
 
-  categorias1 :Categorias[] = []
+  categorias1: Categorias[] = []
 
   selected: string = '';
 
-  constructor(private productosService:ProductosService, private router :Router, private activatedRoute:ActivatedRoute, private categoriasService :CategoriasService) { }
+  constructor(private productosService: ProductosService, private router: Router, private activatedRoute: ActivatedRoute, private categoriasService: CategoriasService) {
+  }
 
   ngOnInit(): void {
     this.cargar();
@@ -30,8 +31,8 @@ export class FormproductosComponent implements OnInit {
       categorias1 => this.categorias1 = categorias1
     );
 
-
   }
+
 
   public create(): void {
 
@@ -44,24 +45,24 @@ export class FormproductosComponent implements OnInit {
     )
   }
 
-  Editar():void{
+  Editar(): void {
     console.log(this.productos
     )
     this.productosService.updateProductos(this.productos).subscribe(
-      productos=>{
+      productos => {
         this.router.navigate(['/producto'])
         Swal.fire('Producto modificado', `Producto ${productos.nombre} modificado con exito`, 'success')
       }
     )
   }
 
-  cargar():void{
+  cargar(): void {
     this.activatedRoute.params.subscribe(
-      e=>{
+      e => {
         let id = e['id'];
-        if(id){
+        if (id) {
           this.productosService.getProductosId(id).subscribe(
-            es=> this.productos = es
+            es => this.productos = es
           );
         }
 
@@ -70,8 +71,24 @@ export class FormproductosComponent implements OnInit {
   }
 
 
-  Regresar() :void{
-      this.router.navigate(['/producto'])
-    }
+
+
+
+  Regresar(): void {
+    this.router.navigate(['/producto'])
+  }
 
 }
+
+/*
+this.categoriasService.getCategoriasById(categorias1.id).subscribe(
+      categorias1 => this.categorias1 = categorias1
+    );
+
+
+  categoriaById(id:number):void{
+    this.categoriasService.getCategoriasById(id).subscribe(
+      categorias1 => this.categorias1 = categorias1
+    );
+  }
+*/

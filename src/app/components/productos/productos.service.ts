@@ -8,8 +8,8 @@ import {Productos} from "./productos";
 })
 export class ProductosService {
 
-  //private urlEndPoint: string ="https://tecnistoreaapi.rj.r.appspot.com:443/producto/read";
-  private urlEndPoint: string= "http://localhost:8080/producto";
+  private urlEndPoint: string ="https://tecnistoreaapi.rj.r.appspot.com:443/producto";
+  //private urlEndPoint: string= "http://localhost:8080/producto";
 
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'})
 
