@@ -21,27 +21,40 @@
 
 
           <!--Formato-->
-          <form method="">
+          <form (ngSubmit)="onSubmit()">
             <mat-form-field class="full-width" appearance="outline">
               <mat-label>Usuario</mat-label>
-
-              <input type="text" required matInput />
+              <input 
+              [(ngModel)]="credentials.usuario"
+              name="usuario"
+              required 
+              type="text" 
+              matInput />
             </mat-form-field>
 
             <mat-form-field class="full-width" appearance="outline">
               <mat-label>Contraseña</mat-label>
-              <input type="text" matInput />
+              <input 
+              [(ngModel)]="credentials.clave"
+              required 
+              name="usuario"
+              type="password"
+              matInput />
             </mat-form-field>
 
             <div class="container text-center ">
 
-              <a routerLink="/dashboard" mat-stroked-button color="primary">Iniciar Sesion</a>
+              <!--<a routerLink="/dashboard" mat-stroked-button color="primary">Iniciar Sesion</a>-->
+              <button type="submit" mat-stroked-button color="primary">
+                Iniciar Sesion
+              </button>
               <a mat-button color="primary" routerLink="/">Salir</a>
 
             </div>
 
           </form>
-
+          <br />
+          <p class="mt">{{ credentials | json }}</p>
         </div>
 
       </div>
@@ -50,21 +63,3 @@
 
 
   </div>
-
-
-  <!--
- <form action="">
-<form [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm.value)">
-
-[(ngModel)]="login.usuario"
-
-
-        (ngSubmit)="enterAccount()
- [(ngModel)]="login.usuario" name="usuario"
-
-[(ngModel)]="login.clave"
-
-<<button type="submit" mat-stroked-button color="primary">
-                            Iniciar Sesion
-                        </button>
--->
