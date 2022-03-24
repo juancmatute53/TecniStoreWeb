@@ -4,8 +4,8 @@ import {ProductosService} from "./productos.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import Swal from 'sweetalert2'
 
-import {Categorias} from "../categorias/categorias";
-import {CategoriasService} from "../categorias/categorias.service";
+import {Categoria} from "../categoria/categoria";
+import {CategoriaService} from "../categoria/categoria.service";
 
 
 @Component({
@@ -18,11 +18,11 @@ export class FormproductosComponent implements OnInit {
   public productos: Productos = new Productos();
 
 
-  categorias1: Categorias[] = []
+  categorias1: Categoria[] = []
 
   selected: string = '';
 
-  constructor(private productosService: ProductosService, private router: Router, private activatedRoute: ActivatedRoute, private categoriasService: CategoriasService) {
+  constructor(private productosService: ProductosService, private router: Router, private activatedRoute: ActivatedRoute, private categoriasService: CategoriaService) {
   }
 
   ngOnInit(): void {
@@ -69,10 +69,6 @@ export class FormproductosComponent implements OnInit {
       }
     );
   }
-
-
-
-
 
   Regresar(): void {
     this.router.navigate(['/producto'])

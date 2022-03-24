@@ -7,7 +7,7 @@ import {LoginComponent} from './components/login/login.component';
 import {ProductoComponent} from './components/producto/producto.component';
 import {FormproductosComponent} from "./components/productos/formproductos.component";
 
-import {CategoriaComponent} from "./components/categoria/categoria.component";
+import {CategoriasComponent} from "./components/categorias/categorias.component";
 
 
 const routes: Routes = [
@@ -46,12 +46,12 @@ const routes: Routes = [
   },
   {
     path: "categoria",
-    component: CategoriaComponent,
+    component: CategoriasComponent,
     //pathMatch: "full"
   },
   {
     path: "categoria/:id",
-    component: CategoriaComponent,
+    component: CategoriasComponent,
     //pathMatch: "full"
   },
 

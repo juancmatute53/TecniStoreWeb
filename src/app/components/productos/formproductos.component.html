@@ -23,12 +23,14 @@
           <mat-select [(ngModel)]="productos.idCategoria" placeholder="Selecciona una categoriaaa" name="categorias">
 
             <ng-container *ngFor="let  categoria of categorias1">
-              <mat-option value="{{categoria.idCategoria}}"  >{{categoria.nombre}}</mat-option>
+              <mat-option value="{{categoria.idCategoria}}"   >{{categoria.nombre}}</mat-option>
             </ng-container>
           </mat-select>
 
         </div>
       </div>
+
+      <!--*ngIf="categoria.idCategoria === productos.idCategoria"-->
 
       <br>
       <div class="form-group row">
