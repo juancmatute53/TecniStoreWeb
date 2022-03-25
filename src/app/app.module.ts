@@ -29,6 +29,10 @@ import { PcategoriaPipe } from './components/pipes/pcategoria.pipe';
 import { CategoriaComponent } from './components/categoria/categoria.component';
 import { FormcategoriaComponent } from './components/categoria/formcategoria.component';
 import { CategoriasComponent } from './components/categorias/categorias.component';
+import { PedidoComponent } from './components/pedido/pedido.component';
+import { DetallepedidoComponent } from './components/detallepedido/detallepedido.component';
+import { FacturaComponent } from './components/factura/factura.component';
+import { ClienteComponent } from './components/cliente/cliente.component';
 
 
 
@@ -48,6 +52,10 @@ import { CategoriasComponent } from './components/categorias/categorias.componen
     CategoriaComponent,
     FormcategoriaComponent,
     CategoriasComponent,
+    PedidoComponent,
+    DetallepedidoComponent,
+    FacturaComponent,
+    ClienteComponent,
 
   ],
   imports: [
