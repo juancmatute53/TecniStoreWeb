@@ -1,77 +1,65 @@
 <div class="bootstrap-wrapper">
 
   <div class="container mt">
-
     <div class="row">
-
-
       <div class="col-md-6 offset-md-3">
 
         <div class="container text-center">
 
           <img class="img-fluid" style="width: 100px;" src="/assets/perfil-del-usuario1.png" alt="">
 
-            <div class="col-md-6 offset-md-3">
-                
-                <div class="container text-center">
-                    <img class="img-fluid" style="width: 100px;" 
-                    src="/assets/inicioico.png" alt="">
-                </div>
+          <div class="col-md-6 offset-md-3">
 
 
-        </div>
+            <div class="container text-center">
+              <img class="img-fluid" style="width: 100px;" src="/assets/inicioico.png" alt="">
+            </div>
 
-        <h1 class="text-center">Inicio de Sesion</h1>
-
-
-        <!--Formato-->
-        <form method="">
-          <mat-form-field class="full-width" appearance="outline">
-            <mat-label>Usuario</mat-label>
-
-                    <div class="container text-center ">
-                        <!--<button type="submit" mat-stroked-button color="primary">
-                            Iniciar Sesion
-                        </button>-->
-                        <a routerLink="/dashboard" mat-stroked-button color="primary">Iniciar Sesion</a>
-                        <a mat-button color="primary" routerLink="/">Salir</a>
-
-                    </div>
-                </form>
-
-            <input type="text" required matInput/>
-          </mat-form-field>
-
-          <mat-form-field class="full-width" appearance="outline">
-            <mat-label>Contraseña</mat-label>
-            <input type="text" matInput/>
-          </mat-form-field>
-
-          <div class="container text-center ">
-            <button type="submit" mat-raised-button color="primary">
-              Iniciar Sesion
-            </button>
           </div>
-        </form>
+
+          <h1 class="text-center">Inicio de Sesion</h1>
+
+
+          <!--Formato-->
+          <form (ngSubmit)="onSubmit()">
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Usuario</mat-label>
+              <input 
+              [(ngModel)]="credentials.usuario"
+              name="usuario"
+              required 
+              type="text" 
+              matInput />
+            </mat-form-field>
+
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Contraseña</mat-label>
+              <input 
+              [(ngModel)]="credentials.clave"
+              required 
+              name="usuario"
+              type="password"
+              matInput />
+            </mat-form-field>
+
+            <div class="container text-center ">
+
+              <!--<a routerLink="/dashboard" mat-stroked-button color="primary">Iniciar Sesion</a>-->
+              <button type="submit" mat-stroked-button color="primary">
+                Iniciar Sesion
+              </button>
+              <a mat-button color="primary" routerLink="/">Salir</a>
+
+            </div>
+
+          </form>
+          <br />
+          <p class="mt">{{ credentials | json }}</p>
+        </div>
 
       </div>
 
     </div>
 
+
   </div>
-
-</div>
-
-
-<!--
- <form action="">
-<form [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm.value)">
-
-[(ngModel)]="login.usuario"
-
-
-        (ngSubmit)="enterAccount()
- [(ngModel)]="login.usuario" name="usuario"
-
-[(ngModel)]="login.clave"
--->

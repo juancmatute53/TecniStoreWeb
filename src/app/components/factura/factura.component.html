@@ -37,18 +37,19 @@
                 </p>
               </td>
             </div>
-            <td>{{detallepedido1.precioUnitario |currency }}</td>
-            <td>{{detallepedido1.precioUnitario  * detallepedido1.cantidad  |currency}}</td>
+
+
+            <td>{{detallepedido1.precioUnitario}}</td>
+            <td>{{detallepedido1.cantidad * detallepedido1.precioUnitario}}</td>
 
           </tr>
 
           </tbody>
           <tfoot>
           <td colspan="2"></td>
+          <th>TOTAL</th>
+          <th>{{pedido1.totalGeneral}}</th>
 
-          <th>TOTAL= </th>
-
-          <th>{{pedido1.totalGeneral |currency}}</th>
           </tfoot>
         </table>
       </div>
@@ -56,23 +57,3 @@
   </div>
 </div>
 
-
-<!--
-<div id="categorias">
-<td *ngFor="let categorias2 of categorias1  | pcategoria:filterPost"><p
-  *ngIf="(categorias2.idCategoria)===(productos2.idCategoria)">  {{categorias2.nombre  }}</p></td>
-</div>
-          <div *ngFor="let productos1 of productos">
-  <td *ngIf="detallepedido1.idProducto == productos1.idProducto">
-    <p></p>
-  </td>
-</div>
-
-            <td>{{productosService.getProductosById(detallepedido1.idProducto) |async |json}}</td>
-            <div *ngIf="productos == ">
-              <td>{{producto.nombre}}</td>
-            </div>
-<td>{{productosService.getProductosId(detallepedido1.idProducto) |async |json }}</td>-->
-
-
--->

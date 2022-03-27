@@ -22,9 +22,14 @@ export class FacturaComponent implements OnInit {
   detallepedido: Detallepedido[] = [];
   productos: Productos[] = [];
 
+
 total: number =0;
+
+  contador: number = 0;
+
   constructor(private pedidoService: PedidoService, private clienteService: ClienteService,
-              private detallepedidoService: DetallepedidoService, public productosService: ProductosService) {
+              private  detallepedidoService :DetallepedidoService,  private  productosService :ProductosService) {
+
   }
 
   ngOnInit(): void {
@@ -46,25 +51,4 @@ total: number =0;
 
   }
 
-
-
-
 }
-
-/*
-this.detallepedidoService.getDetallePedido().subscribe(
-      e=>{
-       this.total = e.reduce((acc,obj)=>acc+(obj.cantidad * obj.precioUnitario),0);
-      }
-    )
-
-
-
-    this.total = this.detallepedido.reduce((acc, obj) => acc + (obj.cantidad * obj.precioUnitario), 0)
-    this.total = this.detallepedidoService.getDetallePedido().reduce()
-
-    this.detallepedidoService.getDetallePedido().subscribe(
-      detallepedido => this.total= this.detallepedido.reduce( (acc,obj)=> acc + (obj.cantidad * obj.precioUnitario),0)
-    )
-
-*/

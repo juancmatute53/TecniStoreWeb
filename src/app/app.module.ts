@@ -12,25 +12,28 @@ import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MatToolbarModule} from '@angular/material/toolbar';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input'
-
+import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import {HttpClientModule} from "@angular/common/http";
-
 import {MatTooltipModule} from "@angular/material/tooltip";
-
 import {FormproductosComponent} from "./components/productos/formproductos.component";
-import { CategoriaComponent } from './components/categoria/categoria.component';
-import { CategoriasComponent } from './components/categorias/categorias.component';
-
-import { FormsModule } from '@angular/forms'
 import { MatMenuModule} from '@angular/material/menu';
 import { ProductoComponent } from './components/producto/producto.component';
 import { FacturasComponent } from './components/facturas/facturas.component'
 import {MatTreeModule} from '@angular/material/tree';
 import { ProductosComponent } from './components/productos/productos.component';
-import {HttpClientModule} from "@angular/common/http";
-import {FormproductosComponent} from "./components/productos/formproductos.component";
+import {MatOptionModule} from "@angular/material/core";
+import {MatSelectModule} from "@angular/material/select";
+import { FilterPipe } from './components/pipes/filter.pipe';
+import { PcategoriaPipe } from './components/pipes/pcategoria.pipe';
+import { CategoriaComponent } from './components/categoria/categoria.component';
+import { FormcategoriaComponent } from './components/categoria/formcategoria.component';
+import { CategoriasComponent } from './components/categorias/categorias.component';
+import { PedidoComponent } from './components/pedido/pedido.component';
+import { DetallepedidoComponent } from './components/detallepedido/detallepedido.component';
+import { FacturaComponent } from './components/factura/factura.component';
+import { ClienteComponent } from './components/cliente/cliente.component';
+
 
 
 @NgModule({
@@ -40,14 +43,19 @@ import {FormproductosComponent} from "./components/productos/formproductos.compo
     HomeComponent,
     LoginComponent,
     DashboardComponent,
-
     ProductoComponent,
     FacturasComponent,
     ProductosComponent,
     FormproductosComponent,
-
+    FilterPipe,
+    PcategoriaPipe,
     CategoriaComponent,
+    FormcategoriaComponent,
     CategoriasComponent,
+    PedidoComponent,
+    DetallepedidoComponent,
+    FacturaComponent,
+    ClienteComponent,
 
   ],
   imports: [
@@ -61,16 +69,17 @@ import {FormproductosComponent} from "./components/productos/formproductos.compo
     MatMenuModule,
     MatInputModule,
     FormsModule,
-
     HttpClientModule,
     ReactiveFormsModule,
-    MatTooltipModule
-
+    MatTooltipModule,
     MatTreeModule,
     HttpClientModule,
+    MatOptionModule,
+    MatSelectModule,
 
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

@@ -1,99 +1,68 @@
-
 <div class="card bg-light ">
   <div class="card-body ">
-
-    <!--(ngSubmit)="create()" -->
     <form ngNativeValidate>
       <div class="form-group row">
-        <label for="nombre" class="col-form-label col-sm-2">Nombre</label>
+        <label for="nombre" class="col-form-label col-sm-3">Nombre</label>
         <div class="col-sm-6">
           <input type="text" class="form-control" [(ngModel)]="productos.nombre" name="nombre" required>
-
-<div class="card bg-info" style="width: 50rem;">
-  <div class="card-body ">
-
-    <!--(ngSubmit)="create()" -->
-    <form ngNativeValidate >
-      <div class="form-group row">
-        <label for="nombre" class="col-form-label col-sm-2">Nombre</label>
-        <div class="col-sm-6">
-          <input type="text" class="form-control" [(ngModel)]="productos.nombre" name="nombre" required >
-
         </div>
       </div>
-
+      <br>
       <div class="form-group row">
-        <label for="fotoUrl" class="col-form-label col-sm-2">fotoUrl</label>
+        <label for="fotoUrl" class="col-form-label col-sm-3">Imagen URL</label>
         <div class="col-sm-6">
           <input type="text" class="form-control" [(ngModel)]="productos.fotoUrl" name="fotoUrl" required>
         </div>
       </div>
 
+      <br>
       <div class="form-group row">
-        <label for="descripcion" class="col-form-label col-sm-2">descripcion</label>
+        <label for="idCategoria" class="col-form-label col-sm-3">idCategoria</label>
         <div class="col-sm-6">
-          <input type="text" class="form-control" [(ngModel)]="productos.descripcion" name="descripcion" required>
-        </div>
-      </div>
 
-<<<<<<< Updated upstream
       <div class="form-group row">
         <label for="idCategoria" class="col-form-label col-sm-2">idCategoria</label>
         <div class="col-sm-6">
 
-          <select>
-            <option></option>
-            <option *ngFor="let  categoria of categorias1  ">
-              {{categoria.nombre}}
-            </option>
-          </select>
-=======
           <mat-select [(ngModel)]="productos.idCategoria" placeholder="Selecciona una categoriaaa" name="categorias">
             <ng-container *ngFor="let  categoria of categorias1">
               <mat-option value="{{categoria.idCategoria}}"   >{{categoria.nombre}}</mat-option>
             </ng-container>
           </mat-select>
->>>>>>> Stashed changes
 
-          <input type="text"  class="form-control" [(ngModel)]="productos.idCategoria" name="idCategoria" required>
+
         </div>
-
-      <!--
-        <div class="col-sm-6">
-          <select type="text">
-            <option></option>
-            <option *ngFor="let  categoria of categorias1  ">
-              {{categoria.nombre}}
-            </option>
-          </select>
-        </div>
-          <input type="text" id="combo" name="idCategoria" required>
-        -->
-
-
-          <input type="text" class="form-control" [(ngModel)]="productos.idCategoria" name="idCategoria" required>
-        </div>
-
       </div>
 
+      <!--*ngIf="categoria.idCategoria === productos.idCategoria"-->
+
+      <br>
       <div class="form-group row">
-        <label for="precio" class="col-form-label col-sm-2">Precio</label>
+        <label for="precio" class="col-form-label col-sm-3">Precio</label>
         <div class="col-sm-6">
           <input type="text" class="form-control" [(ngModel)]="productos.precio" name="precio" required>
         </div>
       </div>
-
-
+      <br>
       <div class="form-group row">
-        <label for="stock" class="col-form-label col-sm-2">Stock</label>
+        <label for="stock" class="col-form-label col-sm-3">Stock</label>
         <div class="col-sm-6">
           <input type="text" class="form-control" [(ngModel)]="productos.stock" name="stock" required>
+        </div>
+      </div>
+      <br>
+
+      <div class="form-group row">
+        <label for="descripcion" class="col-form-label col-sm-3">Descripcion</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="productos.descripcion" name="descripcion" required>
         </div>
       </div>
 
 
       <div class="form-group row">
-        <div class="col-sm-6">
+        <div class="row-cols-sm-3">
+          <br>
           <button class="btn btn-info" role="button" (click)="create()" *ngIf="!productos.idProducto else elseBlock">
             Crear
           </button>
@@ -101,21 +70,13 @@
           <ng-template #elseBlock>
 
             <button class="btn btn-success" role="button" (click)="Editar()">Editar</button>
+
+            <br><br>
             <button class="btn btn-primary" role="button" (click)="Regresar()">Regresar</button>
           </ng-template>
-
-      <div  class="form-group row">
-        <div class="col-sm-6">
-          <button class="btn btn-primary" role="button" (click)="create()" >Crear</button>
-
-          <button class="btn btn-primary" role="button" (click)="Editar()" >Editar</button>
-
 
         </div>
       </div>
     </form>
-
   </div>
 </div>
-
-

@@ -22,14 +22,4 @@ export class DetallepedidoService {
     return this.http.get<Detallepedido>(this.urlEndPoint + "/" + id);
   }
 
-
-
-  /*
-
-
-
-
-
-
-   */
 }
