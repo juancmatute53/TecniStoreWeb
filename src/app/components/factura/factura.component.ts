@@ -22,10 +22,14 @@ export class FacturaComponent implements OnInit {
   detallepedido: Detallepedido[] = [];
   productos: Productos[] = [];
 
+
+total: number =0;
+
   contador: number = 0;
 
   constructor(private pedidoService: PedidoService, private clienteService: ClienteService,
               private  detallepedidoService :DetallepedidoService,  private  productosService :ProductosService) {
+
   }
 
   ngOnInit(): void {
@@ -44,9 +48,6 @@ export class FacturaComponent implements OnInit {
     this.productosService.getProducto().subscribe(
       productos => this.productos = productos
     )
-
-
-
 
   }
 

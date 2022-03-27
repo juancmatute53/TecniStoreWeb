@@ -21,12 +21,5 @@ export class DetallepedidoService {
   getDetallePedidoId(id: number) {
     return this.http.get<Detallepedido>(this.urlEndPoint + "/" + id);
   }
-  /*
 
-
-
-
-
-
-   */
 }

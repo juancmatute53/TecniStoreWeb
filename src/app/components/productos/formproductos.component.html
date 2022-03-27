@@ -20,12 +20,16 @@
         <label for="idCategoria" class="col-form-label col-sm-3">idCategoria</label>
         <div class="col-sm-6">
 
-          <mat-select [(ngModel)]="productos.idCategoria" placeholder="Selecciona una categoriaaa" name="categorias">
+      <div class="form-group row">
+        <label for="idCategoria" class="col-form-label col-sm-2">idCategoria</label>
+        <div class="col-sm-6">
 
+          <mat-select [(ngModel)]="productos.idCategoria" placeholder="Selecciona una categoriaaa" name="categorias">
             <ng-container *ngFor="let  categoria of categorias1">
               <mat-option value="{{categoria.idCategoria}}"   >{{categoria.nombre}}</mat-option>
             </ng-container>
           </mat-select>
+
 
         </div>
       </div>
