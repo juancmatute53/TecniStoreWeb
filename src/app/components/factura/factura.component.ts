@@ -23,8 +23,8 @@ export class FacturaComponent implements OnInit {
   productos: Productos[] = [];
 
 
-total: number =0;
 
+  total: number =0;
   contador: number = 0;
 
   constructor(private pedidoService: PedidoService, private clienteService: ClienteService,
@@ -48,6 +48,15 @@ total: number =0;
     this.productosService.getProducto().subscribe(
       productos => this.productos = productos
     )
+
+    this.detallepedidoService.getDetallePedido().subscribe(
+      e=>{
+        this.total = e.reduce((acc,obj)=>acc+(obj.cantidad * obj.precioUnitario),0);
+      }
+    )
+
+
+
 
   }
 
