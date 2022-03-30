@@ -1,122 +1,68 @@
 <div class="card bg-light ">
-  <div class="card-body ">
+  <div class="card-body">
     <form ngNativeValidate>
+
       <div class="form-group row">
-        <label for="nombre" class="col-form-label col-sm-3">Nombre</label>
-        <div class="col-sm-6">
-          <input type="text" class="form-control" [(ngModel)]="productos.nombre" name="nombre" required>
-        </div>
-      </div>
-      <br>
-      <div class="form-group row">
-        <label for="fotoUrl" class="col-form-label col-sm-3">Imagen URL</label>
-        <div class="col-sm-6">
-          <input type="text" class="form-control" [(ngModel)]="productos.fotoUrl" name="fotoUrl" required>
-        </div>
+        <mat-form-field appearance="legacy">
+          <mat-label for="nombre">Nombre</mat-label>
+          <input matInput id="nombre" name="nombre" [(ngModel)]="productos.nombre" placeholder="Nombre" required>
+        </mat-form-field>
       </div>
 
-      <br>
+      <div class="form-group row">
+        <mat-form-field appearance="legacy">
+          <mat-label for="fotourl">Imagen URL</mat-label>
+          <input matInput id="fotourl" name="fotourl" [(ngModel)]="productos.fotoUrl" placeholder="Imagen URL" required>
+        </mat-form-field>
+      </div>
 
 
       <div class="form-group row">
-        <label for="idCategoria" class="col-form-label col-sm-3">idCategoria</label>
-        <div class="col-sm-6">
-
-<<<<<<< Updated upstream
-      <div class="form-group row">
-        <label for="idCategoria" class="col-form-label col-sm-2">idCategoria</label>
-        <div class="col-sm-6">
-
-          <mat-select [(ngModel)]="productos.idCategoria" placeholder="Selecciona una categoriaaa" name="categorias">
-            <ng-container *ngFor="let  categoria of categorias1">
-              <mat-option value="{{categoria.idCategoria}}"   >{{categoria.nombre}}</mat-option>
-=======
-          <mat-select [(ngModel)]="productos.idCategoria" placeholder="Selecciona una categoriaaa"
-                      name="categorias">
+        <mat-form-field appearance="fill">
+          <mat-label for="idcategoria">Categoria</mat-label>
+          <mat-select [(ngModel)]="productos.idCategoria" name="categorias" required>
             <ng-container *ngFor="let  categoria of categorias1">
               <mat-option value="{{categoria.idCategoria}}">{{categoria.nombre}}</mat-option>
->>>>>>> Stashed changes
             </ng-container>
           </mat-select>
-
-        </div>
+        </mat-form-field>
       </div>
 
-<<<<<<< Updated upstream
-        </div>
-      </div>
-
-      <!--*ngIf="categoria.idCategoria === productos.idCategoria"-->
-
-      <br>
-      <div class="form-group row">
-        <label for="precio" class="col-form-label col-sm-3">Precio</label>
-        <div class="col-sm-6">
-          <input type="text" class="form-control" [(ngModel)]="productos.precio" name="precio" required>
-        </div>
-      </div>
-      <br>
-      <div class="form-group row">
-        <label for="stock" class="col-form-label col-sm-3">Stock</label>
-        <div class="col-sm-6">
-          <input type="text" class="form-control" [(ngModel)]="productos.stock" name="stock" required>
-        </div>
-      </div>
-      <br>
 
       <div class="form-group row">
-        <label for="descripcion" class="col-form-label col-sm-3">Descripcion</label>
-        <div class="col-sm-6">
-          <input type="text" class="form-control" [(ngModel)]="productos.descripcion" name="descripcion" required>
-        </div>
+        <mat-form-field appearance="fill">
+          <mat-label for="descripcion">Descripcion</mat-label>
+          <textarea matInput id="idcategoria" name="idcategoria" [(ngModel)]="productos.descripcion"></textarea>
+        </mat-form-field>
+
       </div>
-=======
-      <br>
 
       <div class="form-group row">
-        <label for="precio" class="col-form-label col-sm-3">Precio</label>
-        <div class="col-sm-6">
-          <input type="text" class="form-control" [(ngModel)]="productos.precio" name="precio" id="precio" required>
-        </div>
+        <mat-form-field appearance="fill" floatLabel="always">
+          <mat-label for="stock">Stock</mat-label>
+          <input matInput id="stock" name="stock" [(ngModel)]="productos.stock" type="number"
+                 class="example-right-align" placeholder="0" required>
+        </mat-form-field>
       </div>
-      <br>
-      <div class="form-group row">
-        <label for="stock" class="col-form-label col-sm-3">Stock</label>
-        <div class="col-sm-6">
-          <input type="text" class="form-control" [(ngModel)]="productos.stock" name="stock" id="stock" required>
-        </div>
-      </div>
-      <br>
 
       <div class="form-group row">
-        <label for="descripcion" class="col-form-label col-sm-3">Descripcion</label>
-        <div class="col-sm-6">
-          <input type="text" class="form-control" [(ngModel)]="productos.descripcion" name="descripcion" id="descripcion" required>
-        </div>
+        <mat-form-field appearance="fill" floatLabel="always">
+          <mat-label for="precio">Precio</mat-label>
+          <input matInput id="precio" name="precio" [(ngModel)]="productos.precio" type="number"
+                 class="example-right-align" placeholder="0" required>
+          <span matPrefix>$&nbsp;</span>
+        </mat-form-field>
       </div>
-
-      <!--*ngIf="categoria.idCategoria === productos.idCategoria"-->
-
       <br>
->>>>>>> Stashed changes
-
 
       <div class="form-group row">
         <div class="row-cols-sm-3">
           <br>
-<<<<<<< Updated upstream
-          <button class="btn btn-info" role="button" (click)="create()" *ngIf="!productos.idProducto else elseBlock">
-=======
           <button class="btn btn-info" role="button" (click)="create()"
-                  *ngIf="!productos.idProducto else elseBlock">
->>>>>>> Stashed changes
-            Crear
+                  *ngIf="!productos.idProducto else elseBlock">Crear
           </button>
-
           <ng-template #elseBlock>
-
             <button class="btn btn-success" role="button" (click)="Editar()">Editar</button>
-
             <br><br>
             <button class="btn btn-primary" role="button" (click)="Regresar()">Regresar</button>
           </ng-template>
@@ -127,4 +73,3 @@
     </form>
   </div>
 </div>
-
