@@ -38,7 +38,7 @@
       <div class="form-group row">
         <mat-form-field appearance="fill" floatLabel="always">
           <mat-label for="precio">Precio</mat-label>
-          <input matInput name="precio" id="precio" type="text" [(ngModel)]="productos.precio" class="example-right-align" placeholder="0">
+          <input matInput name="precio" id="precio" type="text" [(ngModel)]="productos.precio" class="example-right-align" placeholder="0" required>
           <span matPrefix>$&nbsp;</span>
         </mat-form-field>
       </div>
@@ -46,7 +46,7 @@
       <div class="form-group row">
         <mat-form-field appearance="fill" floatLabel="always">
           <mat-label for="stock">Stock</mat-label>
-          <input matInput name="stock" id="stock" type="number" [(ngModel)]="productos.stock" class="example-right-align" placeholder="0">
+          <input matInput name="stock" id="stock" type="number" [(ngModel)]="productos.stock" class="example-right-align" placeholder="0" required>
         </mat-form-field>
       </div>
 
