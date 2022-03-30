@@ -16,10 +16,13 @@
       </div>
 
       <br>
+
+
       <div class="form-group row">
         <label for="idCategoria" class="col-form-label col-sm-3">idCategoria</label>
         <div class="col-sm-6">
 
+<<<<<<< Updated upstream
       <div class="form-group row">
         <label for="idCategoria" class="col-form-label col-sm-2">idCategoria</label>
         <div class="col-sm-6">
@@ -27,10 +30,19 @@
           <mat-select [(ngModel)]="productos.idCategoria" placeholder="Selecciona una categoriaaa" name="categorias">
             <ng-container *ngFor="let  categoria of categorias1">
               <mat-option value="{{categoria.idCategoria}}"   >{{categoria.nombre}}</mat-option>
+=======
+          <mat-select [(ngModel)]="productos.idCategoria" placeholder="Selecciona una categoriaaa"
+                      name="categorias">
+            <ng-container *ngFor="let  categoria of categorias1">
+              <mat-option value="{{categoria.idCategoria}}">{{categoria.nombre}}</mat-option>
+>>>>>>> Stashed changes
             </ng-container>
           </mat-select>
 
+        </div>
+      </div>
 
+<<<<<<< Updated upstream
         </div>
       </div>
 
@@ -58,12 +70,46 @@
           <input type="text" class="form-control" [(ngModel)]="productos.descripcion" name="descripcion" required>
         </div>
       </div>
+=======
+      <br>
+
+      <div class="form-group row">
+        <label for="precio" class="col-form-label col-sm-3">Precio</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="productos.precio" name="precio" id="precio" required>
+        </div>
+      </div>
+      <br>
+      <div class="form-group row">
+        <label for="stock" class="col-form-label col-sm-3">Stock</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="productos.stock" name="stock" id="stock" required>
+        </div>
+      </div>
+      <br>
+
+      <div class="form-group row">
+        <label for="descripcion" class="col-form-label col-sm-3">Descripcion</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="productos.descripcion" name="descripcion" id="descripcion" required>
+        </div>
+      </div>
+
+      <!--*ngIf="categoria.idCategoria === productos.idCategoria"-->
+
+      <br>
+>>>>>>> Stashed changes
 
 
       <div class="form-group row">
         <div class="row-cols-sm-3">
           <br>
+<<<<<<< Updated upstream
           <button class="btn btn-info" role="button" (click)="create()" *ngIf="!productos.idProducto else elseBlock">
+=======
+          <button class="btn btn-info" role="button" (click)="create()"
+                  *ngIf="!productos.idProducto else elseBlock">
+>>>>>>> Stashed changes
             Crear
           </button>
 
@@ -77,6 +123,8 @@
 
         </div>
       </div>
+
     </form>
   </div>
 </div>
+
