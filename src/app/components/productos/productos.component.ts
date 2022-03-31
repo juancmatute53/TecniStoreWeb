@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {Productos} from "./productos";
 import {ProductosService} from "./productos.service";
 
-import {CategoriasService} from "../categorias/categorias.service";
 import {ActivatedRoute} from "@angular/router";
-import {Categorias} from "../categorias/categorias";
+import {Categoria} from "../categoria/categoria";
+import {CategoriaService} from "../categoria/categoria.service";
 
 
 @Component({
@@ -16,12 +16,12 @@ export class ProductosComponent implements OnInit {
 
   productos1: Productos[] = [];
 
-  categorias1: Categorias[] = [];
+  categorias1: Categoria[] = [];
   filterPost= '';
 
   id: number = 0;
 
-  constructor(private productosService: ProductosService, public categoriasService: CategoriasService) { }
+  constructor(private productosService: ProductosService, public categoriasService: CategoriaService) { }
 
   ngOnInit(): void {
     this.productosService.getProducto().subscribe(

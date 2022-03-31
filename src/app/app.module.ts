@@ -13,16 +13,10 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MatToolbarModule} from '@angular/material/toolbar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import {HttpClientModule} from "@angular/common/http";
-
 import {MatTooltipModule} from "@angular/material/tooltip";
-
 import {FormproductosComponent} from "./components/productos/formproductos.component";
-import { CategoriaComponent } from './components/categoria/categoria.component';
-import { CategoriasComponent } from './components/categorias/categorias.component';
-
 import { MatMenuModule} from '@angular/material/menu';
 import { ProductoComponent } from './components/producto/producto.component';
 import { FacturasComponent } from './components/facturas/facturas.component'
@@ -31,8 +25,6 @@ import { ProductosComponent } from './components/productos/productos.component';
 import {MatOptionModule} from "@angular/material/core";
 import {MatSelectModule} from "@angular/material/select";
 import { FilterPipe } from './components/pipes/filter.pipe';
-<<<<<<< Updated upstream
-=======
 import { PcategoriaPipe } from './components/pipes/pcategoria.pipe';
 import { CategoriaComponent } from './components/categoria/categoria.component';
 import { FormcategoriaComponent } from './components/categoria/formcategoria.component';
@@ -42,9 +34,6 @@ import { DetallepedidoComponent } from './components/detallepedido/detallepedido
 import { FacturaComponent } from './components/factura/factura.component';
 import { ClienteComponent } from './components/cliente/cliente.component';
 import { RestapiService } from './restapi.service';
-
->>>>>>> Stashed changes
-
 
 
 @NgModule({
@@ -58,17 +47,16 @@ import { RestapiService } from './restapi.service';
     FacturasComponent,
     ProductosComponent,
     FormproductosComponent,
-    CategoriaComponent,
-    CategoriasComponent,
-<<<<<<< Updated upstream
     FilterPipe,
-=======
+    PcategoriaPipe,
+    CategoriaComponent,
+    FormcategoriaComponent,
+    CategoriasComponent,
     PedidoComponent,
     DetallepedidoComponent,
     FacturaComponent,
     ClienteComponent,
     routingComponents
->>>>>>> Stashed changes
 
   ],
   imports: [
@@ -94,4 +82,5 @@ import { RestapiService } from './restapi.service';
   providers: [RestapiService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

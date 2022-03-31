@@ -11,12 +11,10 @@ import Swal from 'sweetalert2'
 })
 export class LoginComponent implements OnInit {
 
-<<<<<<< Updated upstream
-=======
+
   username!: string;
   password!: string;
   message:any;
->>>>>>> Stashed changes
 
 
   constructor(private service: RestapiService,private router:Router) {
@@ -24,8 +22,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-<<<<<<< Updated upstream
-=======
+
 
   doLogin(){
    let resp= this.service.login(this.username,this.password);
@@ -35,10 +32,18 @@ export class LoginComponent implements OnInit {
     this.router.navigate(["/dashboard"])
     Swal.fire('Administrador TecniStore', `Usuario TecniStoreAdmin Bienvenido`, 'success')
    });
+
+
+  onSubmit(){
+    //console.log("form in submitted");
+
+    if((this.credentials.usuario!='' && this.credentials.clave!='')&& (this.credentials.usuario!=null && this.credentials.clave!=null))
+    {
+      console.log("WE have to submit the form to server");
+    }else{
+      console.log("Fields are empty !!");
+    }
   }
-  
-  
->>>>>>> Stashed changes
 }
 
-
+  

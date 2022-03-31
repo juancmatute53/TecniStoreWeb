@@ -1,0 +1,59 @@
+<p>factura works!</p>
+
+<div class="row row-cols-1 row-cols-md-4 g-4">
+  <div class="col" *ngFor="let pedido1 of pedido; let i=index">
+    <div class="card" *ngIf="i==i">
+      <div class="card-body">
+        <div class="card-header text-center ">{{tecnistore}}</div>
+        <br>
+        <h1 class="float-xxl-end text-danger">N: {{pedido1.idPedido}}</h1>
+        <p><span>Fecha: </span><b>{{pedido1.fecha}}</b></p>
+        <div *ngFor="let cliente1 of cliente">
+          <div *ngIf="pedido1.idCliente == cliente1.idCliente">
+
+            <p>Nombre: <b>{{cliente1.nombre}} {{cliente1.apellido}}</b></p>
+            <p>Direccion: <b>{{cliente1.direccion}}</b></p>
+            <p>Cedula: <b>{{cliente1.cedula}}</b> ----- Telefono: <b>{{cliente1.telefono}}</b></p>
+          </div>
+
+        </div>
+        <table class="table">
+          <thead>
+          <tr>
+            <th scope="col">CANT.</th>
+            <th scope="col">DESCRIPCION</th>
+            <th scope="col">V.UNIT.</th>
+            <th scope="col">V.TOTAL.</th>
+          </tr>
+          </thead>
+          <tbody *ngFor="let detallepedido1 of detallepedido">
+          <tr *ngIf="detallepedido1.idPedido == pedido1.idPedido">
+            <th>{{detallepedido1.cantidad}}</th>
+
+            <div id="nombres">
+              <td *ngFor="let productos1 of productos">
+                <p *ngIf="detallepedido1.idProducto == productos1.idProducto">
+                  {{productos1.nombre}}
+                </p>
+              </td>
+            </div>
+
+
+            <td>{{detallepedido1.precioUnitario}}</td>
+            <td>{{detallepedido1.cantidad * detallepedido1.precioUnitario}}</td>
+
+          </tr>
+
+          </tbody>
+          <tfoot>
+          <td colspan="2"></td>
+          <th>TOTAL</th>
+          <th>{{pedido1.totalGeneral}}</th>
+
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+

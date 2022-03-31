@@ -8,14 +8,11 @@ import {Productos} from "./productos";
 })
 export class ProductosService {
 
-<<<<<<< Updated upstream
-  private urlEndPoint: string ="https://tecnistoreaapi.rj.r.appspot.com:443/producto";
-  //private urlEndPoint: string= "http://localhost:8080/producto";
-=======
- //private urlEndPoint: string ="https://tecnistoreaapi.rj.r.appspot.com:443/producto";
 
-  private urlEndPoint: string= "http://localhost:8080/producto";
->>>>>>> Stashed changes
+  //private urlEndPoint: string ="https://tecnistoreaapi.rj.r.appspot.com:443/producto";
+
+ private urlEndPoint: string= "http://localhost:8080/producto";
+
 
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'})
 
@@ -38,5 +35,18 @@ export class ProductosService {
   updateProductos(productos: Productos){
     return this.http.put<Productos>(this.urlEndPoint+"/update/"+productos.idProducto,productos);
   }
+
+
+
+  getProductosById(id:number) : Observable<Productos[]> {
+    return this.http.get<Productos[]>(this.urlEndPoint+"/"+id);
+  }
+
+  /*
+  getProductosById(id:number): Observable<Productos[]>{
+    console.log(this.http.get<Productos[]>(this.urlEndPoint+"/"+1))
+    return this.http.get<Productos[]>(this.urlEndPoint+"/"+id);
+
+  }*/
 
 }
