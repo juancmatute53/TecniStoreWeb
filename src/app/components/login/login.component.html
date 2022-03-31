@@ -1,5 +1,5 @@
-<div class="bootstrap-wrapper">
 
+<<<<<<< Updated upstream
     <div class="container mt">
         <div class="row">
             <div class="col-md-6 offset-md-3">
@@ -78,9 +78,30 @@
         </form>
 
       </div>
-
+=======
+<div class="wrapper fadeInDown">
+  
+  <div id="formContent">
+    <!-- Tabs Titles -->
+    <h1 class="text-center">Inicio de Sesion</h1>
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="assets/inicioico.png" id="icon" alt="User Icon" />
     </div>
 
+    
+
+    <!-- Login Form -->
+    <form> 
+      <input type="text" id="email" name="username" class="fadeIn second"  placeholder="Usuario" [(ngModel)]="username">
+      <input type="password" id="password" name="password" class="fadeIn third"  placeholder="Contraseña" [(ngModel)]="password">
+>>>>>>> Stashed changes
+
+      <input type="submit" name="Login" id="go" class="fadeIn fourth"  value="INICIAR SESIÓN" (click)="doLogin()">
+      <a mat-button color="primary" routerLink="/">Salir</a>
+    </form>
+
+<<<<<<< Updated upstream
   </div>
 
 
@@ -103,3 +124,9 @@
                             Iniciar Sesion
                         </button>
 -->
+=======
+   
+
+  </div>
+</div>
+>>>>>>> Stashed changes

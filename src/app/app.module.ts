@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule,routingComponents} from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from "@angular/material/button";
@@ -31,6 +31,19 @@ import { ProductosComponent } from './components/productos/productos.component';
 import {MatOptionModule} from "@angular/material/core";
 import {MatSelectModule} from "@angular/material/select";
 import { FilterPipe } from './components/pipes/filter.pipe';
+<<<<<<< Updated upstream
+=======
+import { PcategoriaPipe } from './components/pipes/pcategoria.pipe';
+import { CategoriaComponent } from './components/categoria/categoria.component';
+import { FormcategoriaComponent } from './components/categoria/formcategoria.component';
+import { CategoriasComponent } from './components/categorias/categorias.component';
+import { PedidoComponent } from './components/pedido/pedido.component';
+import { DetallepedidoComponent } from './components/detallepedido/detallepedido.component';
+import { FacturaComponent } from './components/factura/factura.component';
+import { ClienteComponent } from './components/cliente/cliente.component';
+import { RestapiService } from './restapi.service';
+
+>>>>>>> Stashed changes
 
 
 
@@ -47,7 +60,15 @@ import { FilterPipe } from './components/pipes/filter.pipe';
     FormproductosComponent,
     CategoriaComponent,
     CategoriasComponent,
+<<<<<<< Updated upstream
     FilterPipe,
+=======
+    PedidoComponent,
+    DetallepedidoComponent,
+    FacturaComponent,
+    ClienteComponent,
+    routingComponents
+>>>>>>> Stashed changes
 
   ],
   imports: [
@@ -70,7 +91,7 @@ import { FilterPipe } from './components/pipes/filter.pipe';
     MatSelectModule,
 
   ],
-  providers: [],
+  providers: [RestapiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
