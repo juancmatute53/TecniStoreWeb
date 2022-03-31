@@ -1,4 +1,9 @@
 import {Component, OnInit} from '@angular/core';
+import { FormGroup,FormControl,Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { RestapiService } from 'src/app/restapi.service';
+import Swal from 'sweetalert2'
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -6,16 +11,28 @@ import {Component, OnInit} from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  credentials={
-    usuario:'',
-    clave:''
-  }
 
-  constructor() {
+  username!: string;
+  password!: string;
+  message:any;
+
+
+  constructor(private service: RestapiService,private router:Router) {
   }
 
   ngOnInit(): void {
   }
+
+
+  doLogin(){
+   let resp= this.service.login(this.username,this.password);
+   resp.subscribe(data=>{
+    this.message = data; 
+    //console.log(data);
+    this.router.navigate(["/dashboard"])
+    Swal.fire('Administrador TecniStore', `Usuario TecniStoreAdmin Bienvenido`, 'success')
+   });
+
 
   onSubmit(){
     //console.log("form in submitted");
@@ -29,52 +46,4 @@ export class LoginComponent implements OnInit {
   }
 }
 
-  /*
-  public login: Login = new Login();
-enterAccount(){
-    const login = {idUsuario:this.login.idUsuario, tipoUsuario:this.login.tipoUsuario , usuario: this.login.usuario, clave: this.login.clave}
-    console.log(login)
-
-    this.loginService.loginByUser(login).subscribe(
-      data=>{
-        console.log(data)
-      }
-    )
-  }
-  private loginService:LoginService
-
-
-
-
-  loginForm= new FormGroup({
-    usuario: new FormControl('',Validators.required),
-    clave: new FormControl('',Validators.required)
-  })
-
-
-
-  onLogin(form:User){
-    console.log(form)
-    this.loginService.loginByUser(form).subscribe(
-      data=>{
-        console.log(data)
-      }
-    );
-  }
-
-  public access():void {
-    console.log("entramos al metodo")
-    console.log(this.login)
-  }
-
-    //logins: Login[] = [];
-
-   public
-  constructor() {
-  }
-
-  ngOnInit(): void {
-  }*/
-
-
-
+  
