@@ -36,6 +36,11 @@ export class ProductosService {
     return this.http.put<Productos>(this.urlEndPoint+"/update/"+productos.idProducto,productos);
   }
 
+  deleteProductoId(productos: Productos){
+    return this.http.put<Productos>(this.urlEndPoint+"/update/"+productos.idProducto,productos);
+  }
+
+
 
 
   getProductosById(id:number) : Observable<Productos[]> {

@@ -6,6 +6,7 @@ import Swal from 'sweetalert2'
 
 import {Categoria} from "../categoria/categoria";
 import {CategoriaService} from "../categoria/categoria.service";
+import {Vistaproductos} from "../vistaproductos/vistaproductos";
 
 
 @Component({
@@ -17,6 +18,7 @@ export class FormproductosComponent implements OnInit {
 
   public productos: Productos = new Productos();
 
+  public vistaproductos: Vistaproductos = new Vistaproductos();
 
   categorias1: Categoria[] = []
 

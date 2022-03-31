@@ -1,11 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Productos} from "./productos";
+import {VistaproductosService} from "../vistaproductos/vistaproductos.service";
+import Swal from 'sweetalert2';
 import {ProductosService} from "./productos.service";
-
-import {ActivatedRoute} from "@angular/router";
-import {Categoria} from "../categoria/categoria";
-import {CategoriaService} from "../categoria/categoria.service";
-
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-productos',
@@ -14,48 +12,46 @@ import {CategoriaService} from "../categoria/categoria.service";
 })
 export class ProductosComponent implements OnInit {
 
-  productos1: Productos[] = [];
+  public productos: Productos = new Productos();
 
-  categorias1: Categoria[] = [];
-  filterPost= '';
+  productos1: Productos[] = [];
+  filterPost = '';
 
   id: number = 0;
 
-  constructor(private productosService: ProductosService, public categoriasService: CategoriaService) { }
+  constructor(public vistaproductosService: VistaproductosService, public productosService: ProductosService,
+              private router: Router, private activatedRoute: ActivatedRoute,) {
+  }
 
   ngOnInit(): void {
-    this.productosService.getProducto().subscribe(
-      productos1 => this.productos1 =productos1
+    this.vistaproductosService.getProducto().subscribe(
+      productos1 => this.productos1 = productos1
     );
-
-    this.categoriasService.getCategorias().subscribe(
-      categorias1 => this.categorias1 = categorias1
-    )
-
   }
 
-  categoriasById(id: number):void{
-    this.categoriasService.getCategoriasById(id).subscribe(
-      categorias1 => this.categorias1 = categorias1
+  eliminar(): void {
+    Swal.fire('Producto', ` ocultado con exito`, 'success')
+    this.router.navigate(['/producto'])
+    this.productosService.deleteProductoId(this.productos).subscribe(
+      x => {
+        this.productosService.getProducto().subscribe(
+          rp => this.productos1 = rp
+        )
+      }
     )
   }
 
 
-/*
-
-  categorias1: Categorias[] = [];
-
-  ide: number = 0;
-
-    this.categoriasService.getCategoriasById(this.).subscribe(
-      categorias1 => this.categorias1 = categorias1
+  Editar(): void {
+    console.log(this.productos
     )
-
-
-
-  categoriaById(id: number):void{
-    this.categoriasService.getCategoriasId(id).subscribe(
-      es=> this.categorias = es
+    this.productosService.updateProductos(this.productos).subscribe(
+      productos => {
+        this.router.navigate(['/producto'])
+        Swal.fire('Producto modificado', `Producto ${productos.nombre} modificado con exito`, 'success')
+      }
     )
-  }*/
+  }
+
+
 }

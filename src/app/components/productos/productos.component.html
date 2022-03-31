@@ -15,33 +15,29 @@
           <th>PRECIO</th>
           <th>CATEGORIA</th>
           <th>DESCRIPCION</th>
-          <th>CATEGORIA</th>
-          <th>DESCRIPCION</th>
           <th>ESTADO</th>
+          <th>STOCK</th>
+          <th>EDITAR</th>
         </tr>
         </thead>
 
         <tbody>
         <tr *ngFor="let productos2 of productos1 | filter:filterPost">
-          <td>{{productos2.idProducto}}</td>
+          <td>{{productos2.id_producto}}</td>
           <td>{{productos2.nombre}}</td>
-          <td><img src="{{productos2.fotoUrl}}" width="50px"></td>
+          <td><img src="{{productos2.imagen}}" width="50px"></td>
           <td> {{productos2.precio}} $</td>
-          <ng-container *ngFor="let categorias2 of categorias1  | pcategoria:filterPost">
-            <td *ngIf="(categorias2.idCategoria)===(productos2.idCategoria)">{{categorias2.nombre  }} </td>
-          </ng-container>
-
+          <td>{{productos2.categoria}}</td>
           <td>{{productos2.descripcion}}</td>
           <td>
-            <label class="switch">
-              <input type="checkbox">
-              <span class="slider round"></span>
-            </label>
+            <mat-slide-toggle [checked]="productos2.estado"  disabled>
+              ON
+            </mat-slide-toggle>
           </td>
           <td>{{productos2.stock}}
           <td>
             <button type="button" name="button" class="btn btn-warning"
-                    routerLink="/producto/{{productos2.idProducto}}">EDITAR
+                    routerLink="/producto/{{productos2.id_producto}}">EDITAR
             </button>
           </td>
         </tr>
@@ -62,4 +58,27 @@
 
 <!--
 {{categoriasService.getCategoriasById(productos2.idCategoria) |async |json }}
+
+
+          <ng-container *ngFor="let categorias2 of categorias1  | pcategoria:filterPost">
+            <td *ngIf="(categorias2.idCategoria)===(productos2.idCategoria)">{{categorias2.nombre  }} </td>
+          </ng-container>
+
+                        <input ng-disabled="true" id="lorem3" type="checkbox" name="lorem" ng-model="layout.layoutActInd">
+
+<label class="switch">
+  <input type="checkbox"> hola
+  <span class="slider round"></span>
+</label>
+                        <button class="btn btn-info" role="button"
+                                *ngIf="!productos.idProducto else elseBlock">
+                          Crear
+                        </button>
+                        <button class="btn btn-danger" role="button" *ngIf="productos2.estado === 'false' else elseBlock1">
+                          INACTIVO
+  <ng-template #elseBlock1>
+  <button class="btn btn-info" role="button" (click)="eliminar()" >ACTIVO</button>
+                        </ng-template>
+            -->
+
 -->

@@ -34,6 +34,7 @@ import { DetallepedidoComponent } from './components/detallepedido/detallepedido
 import { FacturaComponent } from './components/factura/factura.component';
 import { ClienteComponent } from './components/cliente/cliente.component';
 import { RestapiService } from './restapi.service';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 
 @NgModule({
@@ -77,7 +78,7 @@ import { RestapiService } from './restapi.service';
     HttpClientModule,
     MatOptionModule,
     MatSelectModule,
-
+    MatSlideToggleModule,
   ],
   providers: [RestapiService],
   bootstrap: [AppComponent]
