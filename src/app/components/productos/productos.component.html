@@ -12,8 +12,15 @@
           <th>id</th>
           <th>NOMBRE</th>
           <th>IMAGEN</th>
+<<<<<<< Updated upstream
           <th>PRECIO</th><th >CATEGORIA</th>
           <th >DESCRIPCION</th>
+=======
+          <th>PRECIO</th>
+          <th>CATEGORIA</th>
+          <th>DESCRIPCION</th>
+          <th>ESTADO</th>
+>>>>>>> Stashed changes
           <th>STOCK</th>
           <th>EDITAR</th>
         </tr>
@@ -25,13 +32,26 @@
           <td>{{productos2.nombre}}</td>
           <td><img src="{{productos2.fotoUrl}}" width="50px"></td>
           <td> {{productos2.precio}} $</td>
+<<<<<<< Updated upstream
           <br>
           <div id="categorias">
             <td *ngFor="let categorias2 of categorias1  | pcategoria:filterPost"><p
               *ngIf="(categorias2.idCategoria)===(productos2.idCategoria)">  {{categorias2.nombre  }}</p></td>
           </div>
+=======
+
+          <ng-container *ngFor="let categorias2 of categorias1  | pcategoria:filterPost">
+            <td *ngIf="(categorias2.idCategoria)===(productos2.idCategoria)">{{categorias2.nombre  }} </td>
+          </ng-container>
+>>>>>>> Stashed changes
 
           <td>{{productos2.descripcion}}</td>
+          <td>
+            <label class="switch">
+              <input type="checkbox">
+              <span class="slider round"></span>
+            </label>
+          </td>
           <td>{{productos2.stock}}
           <td>
             <button type="button" name="button" class="btn btn-primary"

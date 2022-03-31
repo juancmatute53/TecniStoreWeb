@@ -40,9 +40,15 @@
 
       <div class="form-group row">
         <mat-form-field appearance="fill" floatLabel="always">
+<<<<<<< Updated upstream
           <mat-label for="stock">Stock</mat-label>
           <input matInput id="stock" name="stock" [(ngModel)]="productos.stock" type="number"
                  class="example-right-align" placeholder="0" required>
+=======
+          <mat-label for="precio">Precio</mat-label>
+          <input matInput name="precio" id="precio" type="number" [(ngModel)]="productos.precio" class="example-right-align" placeholder="0" required>
+          <span matPrefix>$&nbsp;</span>
+>>>>>>> Stashed changes
         </mat-form-field>
       </div>
 
