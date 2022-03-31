@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule,routingComponents} from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from "@angular/material/button";
@@ -33,7 +33,7 @@ import { PedidoComponent } from './components/pedido/pedido.component';
 import { DetallepedidoComponent } from './components/detallepedido/detallepedido.component';
 import { FacturaComponent } from './components/factura/factura.component';
 import { ClienteComponent } from './components/cliente/cliente.component';
-
+import { RestapiService } from './restapi.service';
 
 
 @NgModule({
@@ -56,6 +56,7 @@ import { ClienteComponent } from './components/cliente/cliente.component';
     DetallepedidoComponent,
     FacturaComponent,
     ClienteComponent,
+    routingComponents
 
   ],
   imports: [
@@ -78,7 +79,7 @@ import { ClienteComponent } from './components/cliente/cliente.component';
     MatSelectModule,
 
   ],
-  providers: [],
+  providers: [RestapiService],
   bootstrap: [AppComponent]
 })
 

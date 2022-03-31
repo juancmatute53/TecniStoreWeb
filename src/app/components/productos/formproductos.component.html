@@ -1,12 +1,12 @@
-
 <div class="card bg-light ">
-  <div class="card-body">
+  <div class="card-body ">
     <form ngNativeValidate>
+
 
       <div class="form-group row">
         <mat-form-field appearance="legacy">
           <mat-label for="nombre">Nombre</mat-label>
-          <input matInput id="nombre" name="nombre" [(ngModel)]="productos.nombre" placeholder="Nombre" required>
+          <input matInput name="nombre" id="nombre" [(ngModel)]="productos.nombre" placeholder="Nombre" required>
         </mat-form-field>
       </div>
 
@@ -22,6 +22,15 @@
         <mat-form-field appearance="fill">
           <mat-label for="idcategoria">Categoria</mat-label>
           <mat-select [(ngModel)]="productos.idCategoria" name="categorias" required>
+          <mat-label for="fotourl">Imagen Url</mat-label>
+          <input matInput name="fotourl" id="fotourl" [(ngModel)]="productos.fotoUrl" placeholder="Imagen Url" required>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group row">
+        <mat-form-field appearance="fill">
+          <mat-label>Categoria</mat-label>
+          <mat-select [(ngModel)]="productos.idCategoria" name="categorias">
             <ng-container *ngFor="let  categoria of categorias1">
               <mat-option value="{{categoria.idCategoria}}">{{categoria.nombre}}</mat-option>
             </ng-container>
@@ -29,54 +38,47 @@
         </mat-form-field>
       </div>
 
-
+        
       <div class="form-group row">
-        <mat-form-field appearance="fill">
-          <mat-label for="descripcion">Descripcion</mat-label>
-          <textarea matInput id="idcategoria" name="idcategoria" [(ngModel)]="productos.descripcion"></textarea>
-        </mat-form-field>
-
+          <mat-form-field appearance="fill">
+            <mat-label for="descripcion">Descripcion</mat-label>
+            <textarea matInput  name="descripcion" id="descripcion" [(ngModel)]="productos.descripcion" required></textarea>
+          </mat-form-field>
       </div>
 
       <div class="form-group row">
         <mat-form-field appearance="fill" floatLabel="always">
-<<<<<<< Updated upstream
           <mat-label for="stock">Stock</mat-label>
           <input matInput id="stock" name="stock" [(ngModel)]="productos.stock" type="number"
                  class="example-right-align" placeholder="0" required>
-=======
+          </mat-form-field>
+      </div>
+        
+        
+         <div class="form-group row">
+        <mat-form-field appearance="fill" floatLabel="always">
           <mat-label for="precio">Precio</mat-label>
           <input matInput name="precio" id="precio" type="number" [(ngModel)]="productos.precio" class="example-right-align" placeholder="0" required>
           <span matPrefix>$&nbsp;</span>
->>>>>>> Stashed changes
         </mat-form-field>
       </div>
-
-      <div class="form-group row">
-        <mat-form-field appearance="fill" floatLabel="always">
-          <mat-label for="precio">Precio</mat-label>
-          <input matInput id="precio" name="precio" [(ngModel)]="productos.precio" type="number"
-                 class="example-right-align" placeholder="0" required>
-          <span matPrefix>$&nbsp;</span>
-        </mat-form-field>
-      </div>
-      <br>
 
       <div class="form-group row">
         <div class="row-cols-sm-3">
           <br>
           <button class="btn btn-info" role="button" (click)="create()"
-                  *ngIf="!productos.idProducto else elseBlock">Crear
+                  *ngIf="!productos.idProducto else elseBlock">
+            Crear
           </button>
           <ng-template #elseBlock>
             <button class="btn btn-success" role="button" (click)="Editar()">Editar</button>
             <br><br>
             <button class="btn btn-primary" role="button" (click)="Regresar()">Regresar</button>
           </ng-template>
-
         </div>
       </div>
 
     </form>
   </div>
 </div>
+
