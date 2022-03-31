@@ -21,6 +21,8 @@ export class ClienteService {
     return this.http.get<Cliente>(this.urlEndPoint + "/" + id);
   }
 
+
+
   /*
   getProductosId(id:number){
     return this.http.get<Productos>(this.urlEndPoint+"/"+id);
