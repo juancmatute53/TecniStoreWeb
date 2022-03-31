@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import { FormGroup,FormControl,Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RestapiService } from 'src/app/restapi.service';
 import Swal from 'sweetalert2'
@@ -14,24 +14,23 @@ export class LoginComponent implements OnInit {
 
   username!: string;
   password!: string;
-  message:any;
+  message: any;
 
 
-  constructor(private service: RestapiService,private router:Router) {
+  constructor(private service: RestapiService, private router: Router) {
   }
 
   ngOnInit(): void {
   }
 
 
-  doLogin(){
-   let resp= this.service.login(this.username,this.password);
-   resp.subscribe(data=>{
-    this.message = data; 
-    //console.log(data);
-    this.router.navigate(["/dashboard"])
-    Swal.fire('Administrador TecniStore', `Usuario TecniStoreAdmin Bienvenido`, 'success')
-   });
+  doLogin() {
+    let resp = this.service.login(this.username, this.password);
+    resp.subscribe(data => {
+      this.message = data;
+      //console.log(data);
+      this.router.navigate(["/dashboard"])
+      Swal.fire('Administrador TecniStore', `Usuario TecniStoreAdmin Bienvenido`, 'success')
+    });
+  }
 }
-}
-  
