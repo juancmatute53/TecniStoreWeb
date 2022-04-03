@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Productos} from "./productos";
-import {VistaproductosService} from "../vistaproductos/vistaproductos.service";
+import {VistaproductosService} from "../extras/vistaproductos/vistaproductos.service";
 import Swal from 'sweetalert2';
 import {ProductosService} from "./productos.service";
 import {ActivatedRoute, Router} from "@angular/router";

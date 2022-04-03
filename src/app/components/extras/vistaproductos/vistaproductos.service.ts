@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {map, Observable} from "rxjs";
-import {Productos} from "../productos/productos";
+import {Productos} from "../../productos/productos";
 
 @Injectable({
   providedIn: 'root'
 })
 export class VistaproductosService {
 
-  private urlEndPoint: string= "http://localhost:8080/vistaproductos";
+  private urlEndPoint: string= "https://tecnistoreaapi.rj.r.appspot.com/vistaproductos";
+  //private urlEndPoint: string= "http://localhost:8080/vistaproductos";
 
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'})
 
