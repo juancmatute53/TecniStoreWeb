@@ -10,13 +10,13 @@ export class RestapiService {
 
   public login(username:string,password:string){
     const headers=new HttpHeaders({Authorization: 'Basic '+btoa(username+":"+password)})
-    return this.http.get("http://localhost:8090/iniciar",{headers,responseType:'text' as 'json'});
+    return this.http.get("https://apitecnistore.herokuapp.com/iniciar",{headers,responseType:'text' as 'json'});
   }
 
   public getUsers(){
     let username="";
     let password="";
     const headers=new HttpHeaders({Authorization: 'Basic '+btoa(username+":"+password)})
-    return this.http.get("http://localhost:8090/getUser",{headers});
+    return this.http.get("https://apitecnistore.herokuapp.com/getUser",{headers});
   }
 }
