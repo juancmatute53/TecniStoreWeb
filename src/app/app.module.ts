@@ -35,6 +35,7 @@ import { FacturaComponent } from './components/factura/factura.component';
 import { ClienteComponent } from './components/cliente/cliente.component';
 import { RestapiService } from './restapi.service';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { VistafacturaComponent } from './components/disenos/vistafactura/vistafactura.component';
 
 
 @NgModule({
@@ -57,7 +58,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     DetallepedidoComponent,
     FacturaComponent,
     ClienteComponent,
-    routingComponents
+    routingComponents,
+    VistafacturaComponent,
 
   ],
   imports: [

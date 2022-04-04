@@ -21,6 +21,10 @@ export class PedidoService {
     return this.http.get<Pedido>(this.urlEndPoint+"/"+id);
   }
 
+  despacharPedidos(id:number,pedido:Pedido){
+    return this.http.put<Pedido>(this.urlEndPoint+"/despachado/"+id,pedido);
+  }
+
   /*
 
 getProductosId(id:number){

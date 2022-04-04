@@ -4,6 +4,7 @@ import {DetallepedidoService} from "../detallepedido/detallepedido.service";
 import {Productos} from "../productos/productos";
 import {ProductosService} from "../productos/productos.service";
 import {ClienteService} from "../cliente/cliente.service";
+import {SqldetapedidoService} from "../extras/sqldetapedido/sqldetapedido.service";
 
 @Component({
   selector: 'app-dashboard',
@@ -17,7 +18,7 @@ export class DashboardComponent implements OnInit {
 
 
   constructor(private detallepedidoService: DetallepedidoService, public productosService: ProductosService,
-              private clienteService: ClienteService) {
+              private clienteService: ClienteService, private sqldetapedidoService :SqldetapedidoService) {
   }
 
   mercaderia: number = 0;
@@ -41,9 +42,9 @@ export class DashboardComponent implements OnInit {
       detallepedido => this.detallepedido = detallepedido
     )
 
-    this.detallepedidoService.getDetallePedido().subscribe(
+    this.sqldetapedidoService.getDetapedido().subscribe(
       e => {
-        this.producto = e.reduce((acc, obj) => acc + (obj.cantidad * obj.precioUnitario), 0);
+        this.producto = e.reduce((acc, obj) => acc + (obj.cantidad * obj.precio_unitario), 0);
       }
     )
 

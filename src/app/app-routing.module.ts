@@ -5,9 +5,8 @@ import {FacturasComponent} from './components/facturas/facturas.component';
 import {HomeComponent} from './components/home/home.component';
 import {LoginComponent} from './components/login/login.component';
 import {ProductoComponent} from './components/producto/producto.component';
-import {FormproductosComponent} from "./components/productos/formproductos.component";
-
 import {CategoriasComponent} from "./components/categorias/categorias.component";
+import {VistafacturaComponent} from "./components/disenos/vistafactura/vistafactura.component";
 
 
 const routes: Routes = [
@@ -54,6 +53,20 @@ const routes: Routes = [
     component: CategoriasComponent,
     //pathMatch: "full"
   },
+
+  {
+    path: "facturacliente",
+    component: VistafacturaComponent,
+    //pathMatch: "full"
+  },
+
+  {
+    path: "facturacliente/:id",
+    component: VistafacturaComponent,
+    //pathMatch: "full"
+  },
+
+
 
 ];
 
