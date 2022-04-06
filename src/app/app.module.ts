@@ -38,6 +38,8 @@ import {ListproductosComponent} from './components/administracion/productos/list
 import {ProductsComponent} from './components/administracion/productos/products.component';
 import {CategoriesComponent} from './components/administracion/categorias/categories.component';
 import {FormproductsComponent} from './components/administracion/productos/formproducts/formproducts.component';
+import { FormcategoriesComponent } from './components/administracion/categorias/formcategories/formcategories.component';
+import { ListcategoriesComponent } from './components/administracion/categorias/listcategories/listcategories.component';
 
 
 @NgModule({
@@ -63,6 +65,8 @@ import {FormproductsComponent} from './components/administracion/productos/formp
     ProductsComponent,
     CategoriesComponent,
     FormproductsComponent,
+    FormcategoriesComponent,
+    ListcategoriesComponent,
 
   ],
   imports: [

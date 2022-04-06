@@ -11,6 +11,7 @@ import {FacturadespachadaComponent} from "./components/facturas/facturadespachad
 import {FacturaxdespacharComponent} from "./components/facturas/facturaxdespachar/facturaxdespachar.component";
 import {FacturaxclienteComponent} from "./components/facturas/facturaxcliente/facturaxcliente.component";
 import {ProductsComponent} from "./components/administracion/productos/products.component";
+import {CategoriesComponent} from "./components/administracion/categorias/categories.component";
 
 const routes: Routes = [
 
@@ -30,22 +31,32 @@ const routes: Routes = [
     component: DashboardComponent,
     pathMatch: "full"
   },
+
   {
-    path: "facturas",
-    component: FacturasComponent,
+    path: "productos",
+    component: ProductsComponent,
     //pathMatch: "full"
   },
 
   {
-    path: "categoria",
-    component: CategoriasComponent,
+    path: "productos/:id",
+    component: ProductsComponent,
     //pathMatch: "full"
   },
+
   {
-    path: "categoria/:id",
-    component: CategoriasComponent,
+    path: "categorias",
+    component: CategoriesComponent,
     //pathMatch: "full"
   },
+
+  {
+    path: "categorias/:id",
+    component: CategoriesComponent,
+    //pathMatch: "full"
+  },
+
+
 
   {
     path: "facturacliente/:cedula/:estado/:tienda/:fecha/:id",
@@ -70,17 +81,22 @@ const routes: Routes = [
     //pathMatch: "full"
   },
 
+
+
   {
-    path: "productos",
-    component: ProductsComponent,
+    path: "categoria",
+    component: CategoriasComponent,
+    //pathMatch: "full"
+  },
+  {
+    path: "categoria/:id",
+    component: CategoriasComponent,
     //pathMatch: "full"
   },
 
-  {
-    path: "productos/:id",
-    component: ProductsComponent,
-    //pathMatch: "full"
-  },
+
+
+
 
 ];
 

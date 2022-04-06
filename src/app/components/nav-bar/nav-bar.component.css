@@ -1,3 +1,17 @@
+.fon::before {
+  content: "";
+  width: 100%;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /*selecciono los colores que seran mi fondo de desenfoque*/
+  background: linear-gradient(90deg,
+  #d5e7eb, #6dace7);
+  /*ajusto opacidad del fondo*/
+  opacity: 0.7;
+  z-index: -1;
+}
 
 .spacer {
   flex: 0 100 100px;
