@@ -1,87 +1,74 @@
 <app-nav-bar></app-nav-bar>
 
-
-
-<p>
-  laa quellegaron
-
-</p>
-
-
-<div class="row row-cols-1 row-cols-md-3 g-4">
-  <div class="col">
-    <div class="card text-dark bg-info mb-3">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img src="https://cdn-icons-png.flaticon.com/512/3854/3854729.png" class="img-fluid rounded-start" alt="...">
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h1 class="card-header">
-              Total en Mercancia
-            </h1>
-          <h2>{{mercaderia | currency}}</h2>
+<div class="p-3">
+  <div class="row row-cols-1 row-cols-md-4 g-4">
+    <div class="col">
+      <div class="card border-dark text-white bg-primary rounded-2 mb-3">
+        <h1 class="text-center">{{tiendanombre}}</h1>
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="https://cdn-icons-png.flaticon.com/512/3854/3854729.png" class="img-fluid rounded-start">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h2 class="text-center">Total de Mercancia</h2>
+              <h2 class="text-center">{{mercaderia | currency}}</h2>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="col">
-    <div class="card text-dark bg-info mb-3">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img src="https://cdn-icons-png.flaticon.com/512/994/994305.png" class="img-fluid rounded-start" alt="...">
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h1 class="card-header">
-              Total en Productos vendidos
-            </h1>
-            <h2>{{producto | currency}}</h2>
+    <div class="col">
+      <div class="card border-dark text-white bg-primary rounded-2 mb-3">
+        <h1 class="text-center">{{tiendanombre}}</h1>
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="https://cdn-icons-png.flaticon.com/512/994/994305.png" class="img-fluid rounded-start">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h2 class="text-center">Total en Productos vendidos</h2>
+              <h2 class="text-center">{{producto | currency}}</h2>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="col">
-    <div class="card text-dark bg-info mb-3">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img src="https://cdn-icons-png.flaticon.com/512/994/994278.png" class="img-fluid rounded-start" alt="...">
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h1 class="card-header">
-              Total de Clientes
-            </h1>
-            <h2>{{totalclientes}}</h2>
+    <div class="col">
+      <div class="card border-dark text-white bg-primary rounded-2  mb-3">
+        <h1 class="text-center">{{tiendanombre}}</h1>
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="https://cdn-icons-png.flaticon.com/512/994/994278.png" class="img-fluid rounded-start">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h2 class="text-center">Total De Clientes</h2>
+              <h2 class="text-center">{{totalclientes}}</h2>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!--
-  <div class="col">
-    <div class="card text-dark bg-info mb-3">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img src="https://cdn-icons-png.flaticon.com/512/994/994278.png" class="img-fluid rounded-start" alt="...">
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h1 class="card-header">
-              Total de Productos
-            </h1>
-            <h2>{{totalclientes}}</h2>
+    <div class="col">
+      <div class="card border-dark text-white bg-primary rounded-2  mb-3">
+        <h1 class="text-center">{{tiendanombre}}</h1>
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="https://cdn-icons-png.flaticon.com/512/994/994278.png" class="img-fluid rounded-start">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h2 class="text-center">dato</h2>
+              <h2 class="text-center">dato</h2>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
--->
 
+  </div>
 </div>
-

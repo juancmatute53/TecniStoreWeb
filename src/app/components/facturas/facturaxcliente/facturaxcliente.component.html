@@ -1,0 +1,68 @@
+<p>vistafactura works!</p>
+<body>
+<header class="clearfix">
+  <div id="logo"><img src="https://cdn-icons-png.flaticon.com/512/2171/2171148.png">
+  </div>
+  <h1>{{tiendanombre}}</h1>
+  <h2>FACTURA N: {{sqlcliente.id_pedido}}</h2>
+  <div id="company" class="clearfix">
+    <div>{{tiendanombre}}</div>
+    <div>{{ubicacion}},<br/> {{ciudad}} {{codpost}}, {{estado}}</div>
+    <div>{{celular}}</div>
+    <div><a href="{{correo}}">{{correo}}</a></div>
+  </div>
+
+  <div id="project">
+    <div><span>TIENDA</span>{{tiendanombre}}</div>
+    <div><span>CLIENTE</span>{{sqlcliente.cliente}}</div>
+    <div><span>DIRECCION</span>{{sqlcliente.direccion}}</div>
+    <div><span>CORREO</span> <a href="{{sqlcliente.correo}}">{{sqlcliente.correo}}</a></div>
+    <div><span>FECHA</span>{{sqlcliente.fecha}}</div>
+    <div><span>CEDULA</span>{{sqlcliente.cedula}}</div>
+    <div><span>TELEFONO</span>{{sqlcliente.telefono}}</div>
+  </div>
+</header>
+
+<main>
+  <table>
+    <thead>
+
+    <tr>
+      <th class="service">CANTIDAD</th>
+      <th class="desc">DESCRIPCION</th>
+      <th>VALOR UNITARIO</th>
+      <th>VALOR TOTAL</th>
+    </tr>
+    </thead>
+
+    <tbody *ngFor="let detallepedido1 of detallepedido">
+    <tr *ngIf="detallepedido1.idPedido == sqlcliente.id_pedido">
+      <td class="qty">{{detallepedido1.cantidad}}</td>
+
+      <ng-container *ngFor="let productos1 of productos">
+        <td class="desc" *ngIf="detallepedido1.idProducto == productos1.idProducto">
+          {{productos1.nombre}}
+        </td>
+      </ng-container>
+
+      <td class="unit">{{detallepedido1.precioUnitario |currency}}</td>
+      <td class="total">{{detallepedido1.cantidad * detallepedido1.precioUnitario |currency}}</td>
+
+    </tr>
+
+    </tbody>
+
+    <tr>
+      <td colspan="3" class="grand total">GRAND TOTAL</td>
+      <td class="grand total">{{sqlcliente.total_general |currency}}</td>
+    </tr>
+  </table>
+
+</main>
+
+
+<footer>
+  {{tiendanombre}} - Gracias por su compra
+</footer>
+
+</body>

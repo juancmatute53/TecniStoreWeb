@@ -29,13 +29,14 @@ import { PcategoriaPipe } from './components/pipes/pcategoria.pipe';
 import { CategoriaComponent } from './components/categoria/categoria.component';
 import { FormcategoriaComponent } from './components/categoria/formcategoria.component';
 import { CategoriasComponent } from './components/categorias/categorias.component';
-import { PedidoComponent } from './components/pedido/pedido.component';
-import { DetallepedidoComponent } from './components/detallepedido/detallepedido.component';
-import { FacturaComponent } from './components/factura/factura.component';
-import { ClienteComponent } from './components/cliente/cliente.component';
 import { RestapiService } from './restapi.service';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import { VistafacturaComponent } from './components/disenos/vistafactura/vistafactura.component';
+import {MatGridListModule} from "@angular/material/grid-list";
+import { FacturaPipe } from './components/pipes/factura.pipe';
+import { FacturatotalComponent } from './components/facturas/facturatotal/facturatotal.component';
+import { FacturadespachadaComponent } from './components/facturas/facturadespachada/facturadespachada.component';
+import { FacturaxdespacharComponent } from './components/facturas/facturaxdespachar/facturaxdespachar.component';
+import { FacturaxclienteComponent } from './components/facturas/facturaxcliente/facturaxcliente.component';
 
 
 @NgModule({
@@ -54,12 +55,12 @@ import { VistafacturaComponent } from './components/disenos/vistafactura/vistafa
     CategoriaComponent,
     FormcategoriaComponent,
     CategoriasComponent,
-    PedidoComponent,
-    DetallepedidoComponent,
-    FacturaComponent,
-    ClienteComponent,
     routingComponents,
-    VistafacturaComponent,
+    FacturaPipe,
+    FacturatotalComponent,
+    FacturadespachadaComponent,
+    FacturaxdespacharComponent,
+    FacturaxclienteComponent,
 
   ],
   imports: [
@@ -81,6 +82,7 @@ import { VistafacturaComponent } from './components/disenos/vistafactura/vistafa
     MatOptionModule,
     MatSelectModule,
     MatSlideToggleModule,
+    MatGridListModule,
   ],
   providers: [RestapiService],
   bootstrap: [AppComponent]

@@ -1,0 +1,54 @@
+<app-nav-bar></app-nav-bar>
+<br>
+<div class="m-3">
+  <input type="text" class="form-control" name="filterPost" placeholder="Buscador..." [(ngModel)]="filterPost">
+</div>
+<div class="p-3">
+  <div class="row row-cols-1 row-cols-md-3">
+    <div class="col" *ngFor="let sqlcliente of sqlclientes | factura:filterPost">
+      <div class="card border-dark mb-3">
+
+        <div class="card-body text-dark">
+          <h1 class="text-center">{{tiendanombre}}</h1>
+          <p class="align-items-end text-danger">N: {{sqlcliente.id_pedido}}</p>
+          <p>Cliente: <b> {{sqlcliente.cliente}}</b></p>
+          <p>Cedula : <b> {{sqlcliente.cedula}}</b></p>
+          <p>Direccion: <b> {{sqlcliente.direccion}}</b></p>
+          <p>Correo: <b> {{sqlcliente.correo}}</b></p>
+          <p>Fecha: <b> {{sqlcliente.fecha}}</b></p>
+          <p>Telefono: <b> {{sqlcliente.telefono}}</b></p>
+          <br>
+          <table class="table ">
+            <thead>
+            <tr>
+              <th>DESCRIPCION</th>
+              <th>V. UNIT.</th>
+              <th>v. TOTAL</th>
+            </tr>
+            </thead>
+            <tbody *ngFor="let sqldetallespedidos1 of sqldetallespedidos">
+            <tr *ngIf="sqldetallespedidos1.id_pedido  == sqlcliente.id_pedido ">
+              <th scope="row">{{sqldetallespedidos1.cantidad}}</th>
+              <td>{{sqldetallespedidos1.productos}}</td>
+              <td>{{sqldetallespedidos1.precio_unitario |currency}}</td>
+              <td>{{sqldetallespedidos1.precio_total |currency}}</td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+              <td colspan="2"></td>
+              <th>TOTAL</th>
+              <th>{{sqlcliente.total_general | currency}}</th>
+            </tr>
+            </tfoot>
+          </table>
+          <br>
+          <br>
+          <h1 class="text-center">{{tiendanombre}}</h1>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+

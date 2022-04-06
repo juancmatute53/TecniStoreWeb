@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Productos} from "./productos";
-import {VistaproductosService} from "../extras/vistaproductos/vistaproductos.service";
+import {VistaproductosService} from "../modelos/vistaproductos/vistaproductos.service";
 import Swal from 'sweetalert2';
 import {ProductosService} from "./productos.service";
 import {ActivatedRoute, Router} from "@angular/router";
@@ -49,6 +49,7 @@ export class ProductosComponent implements OnInit {
       productos => {
         this.router.navigate(['/producto'])
         Swal.fire('Producto modificado', `Producto ${productos.nombre} modificado con exito`, 'success')
+
       }
     )
   }

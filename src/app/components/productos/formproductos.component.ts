@@ -6,7 +6,7 @@ import Swal from 'sweetalert2'
 
 import {Categoria} from "../categoria/categoria";
 import {CategoriaService} from "../categoria/categoria.service";
-import {Vistaproductos} from "../extras/vistaproductos/vistaproductos";
+import {Vistaproductos} from "../modelos/vistaproductos/vistaproductos";
 
 
 @Component({

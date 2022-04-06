@@ -6,8 +6,10 @@ import {HomeComponent} from './components/home/home.component';
 import {LoginComponent} from './components/login/login.component';
 import {ProductoComponent} from './components/producto/producto.component';
 import {CategoriasComponent} from "./components/categorias/categorias.component";
-import {VistafacturaComponent} from "./components/disenos/vistafactura/vistafactura.component";
-
+import {FacturatotalComponent} from "./components/facturas/facturatotal/facturatotal.component";
+import {FacturadespachadaComponent} from "./components/facturas/facturadespachada/facturadespachada.component";
+import {FacturaxdespacharComponent} from "./components/facturas/facturaxdespachar/facturaxdespachar.component";
+import {FacturaxclienteComponent} from "./components/facturas/facturaxcliente/facturaxcliente.component";
 
 const routes: Routes = [
 
@@ -23,9 +25,9 @@ const routes: Routes = [
   },
   {
 
-    path:"dashboard",
-    component:DashboardComponent,
-    pathMatch:"full"
+    path: "dashboard",
+    component: DashboardComponent,
+    pathMatch: "full"
   },
   {
     path: "producto",
@@ -55,17 +57,26 @@ const routes: Routes = [
   },
 
   {
-    path: "facturacliente",
-    component: VistafacturaComponent,
+    path: "facturacliente/:cedula/:estado/:tienda/:fecha/:id",
+    component: FacturaxclienteComponent,
     //pathMatch: "full"
   },
 
   {
-    path: "facturacliente/:id",
-    component: VistafacturaComponent,
+    path: "facturatotales",
+    component: FacturatotalComponent,
     //pathMatch: "full"
   },
-
+  {
+    path: "facturadespachada",
+    component: FacturadespachadaComponent,
+    //pathMatch: "full"
+  },
+  {
+    path: "facturaxdespachada",
+    component: FacturaxdespacharComponent,
+    //pathMatch: "full"
+  },
 
 
 ];

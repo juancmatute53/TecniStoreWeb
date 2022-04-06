@@ -1,21 +1,31 @@
-<div class="fondo">
-  <mat-toolbar color="basic">
-    <span><a mat-button routerLink="/dashboard">TecniStore</a></span>
-    <span class="example-spacer2"></span>
+<div class="fon">
+  <div class="fondo">
+    <mat-toolbar color="basic">
+      <span><a mat-button routerLink="/dashboard">TecniStore</a></span>
+      <span class="example-spacer2"></span>
 
-    <a mat-stroked-button color="disabled" routerLink="/producto">Administacion Productos</a>
-    <span class="example-spacer2"></span>
+      <a mat-stroked-button [matMenuTriggerFor]="administracion">Administracion</a>
+      <mat-menu #administracion="matMenu">
+        <a mat-menu-item routerLink="/producto">Productos</a>
+        <a mat-menu-item routerLink="/categoria">Categorias</a>
+      </mat-menu>
+      <span class="example-spacer2"></span>
 
-    <a mat-stroked-button color="disabled" routerLink="/categoria">Administracion de Categorias</a>
-    <span class="example-spacer2"></span>
+      <a mat-stroked-button [matMenuTriggerFor]="factura">Facturas</a>
+      <mat-menu #factura="matMenu">
+        <a mat-menu-item routerLink="/facturatotales">Todas las Facturas</a>
+        <a mat-menu-item routerLink="/facturadespachada">Facturas despachadas</a>
+        <a mat-menu-item routerLink="/facturaxdespachada">Facturas por despachar</a>
+      </mat-menu>
+      <span class="example-spacer2"></span>
 
-    <a mat-stroked-button color="disabled" routerLink="/facturas">Administacion Facturas</a>
-    <span class="example-spacer2"></span>
 
-    <a mat-stroked-button color="disabled" routerLink="/dashboard">Representacion Grafica</a>
-    <span class="example-spacer"></span>
+      <a mat-stroked-button color="disabled" routerLink="/dashboard">Representacion Grafica</a>
+      <span class="example-spacer"></span>
 
-    <a mat-raised-button color="warn" routerLink="/login">Salir</a>
-  </mat-toolbar>
-  <div class="fon">  </div>
+      <a mat-raised-button color="warn" routerLink="/login">Salir</a>
+    </mat-toolbar>
+
+  </div>
+
 </div>

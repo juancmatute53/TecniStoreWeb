@@ -1,24 +1,25 @@
 import {Component, OnInit} from '@angular/core';
-import {Detallepedido} from "../detallepedido/detallepedido";
-import {DetallepedidoService} from "../detallepedido/detallepedido.service";
+import {Detallepedido} from "../modelos/detallepedido/detallepedido";
+import {DetallepedidoService} from "../modelos/detallepedido/detallepedido.service";
 import {Productos} from "../productos/productos";
 import {ProductosService} from "../productos/productos.service";
-import {ClienteService} from "../cliente/cliente.service";
-import {SqldetapedidoService} from "../extras/sqldetapedido/sqldetapedido.service";
+import {ClienteService} from "../modelos/cliente/cliente.service";
+import {SqldetapedidoService} from "../modelos/sqldetapedido/sqldetapedido.service";
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['../facturas/facturas.component.css']
 })
 export class DashboardComponent implements OnInit {
 
+  tiendanombre: string = "TECNISTORE";
   detallepedido: Detallepedido[] = [];
   productos: Productos[] = [];
 
 
   constructor(private detallepedidoService: DetallepedidoService, public productosService: ProductosService,
-              private clienteService: ClienteService, private sqldetapedidoService :SqldetapedidoService) {
+              private clienteService: ClienteService, private sqldetapedidoService: SqldetapedidoService) {
   }
 
   mercaderia: number = 0;
@@ -50,16 +51,10 @@ export class DashboardComponent implements OnInit {
 
 
     this.clienteService.getCliente().subscribe(
-      x=>{
+      x => {
         this.totalclientes = x.length;
       }
     )
   }
 
-  /*
-  (x => {
-                this.totalCount = x.length;
-                this.mySubject.next(x);
-                });
-   */
 }
