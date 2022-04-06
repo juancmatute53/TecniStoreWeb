@@ -8,7 +8,9 @@ import {Sqldetallespedidos} from "./sqldetallespedidos";
 })
 export class SqldetallespedidosService {
 
-  private urlEndPoint: string = "http://localhost:8080/sqldetalledepedidos"
+ // private urlEndPoint: string = "http://localhost:8080/sqldetalledepedidos"
+
+  private urlEndPoint: string ="https://tecnistoreaapi.rj.r.appspot.com:443/sqldetalledepedidos";
 
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'})
 

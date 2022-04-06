@@ -1,1 +1,41 @@
-<p>formcategories works!</p>
+<div class="p-3">
+  <div class="card border-dark text-black bg-light rounded-2 mb-3">
+    <div class="p-4 ">
+      <form val ngNativeValidate>
+        <div class="form-group row">
+          <mat-form-field appearance="legacy">
+            <mat-label for="nombre">Nombre</mat-label>
+            <input matInput name="nombre" id="nombre" [(ngModel)]="categorias.nombre" placeholder="Nombre" required>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group row">
+          <mat-form-field appearance="legacy">
+            <mat-label for="fotourl">Imagen URL</mat-label>
+            <input matInput name="fotourl" id="fotourl" [(ngModel)]="categorias.fotoUrl" placeholder="Imagen URL"
+                   required>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group row">
+          <h1 class="text-center">
+            <button class="btn btn-info btn-lg" role="button" type="submit" (click)="Crear()" *ngIf="!categorias.idCategoria else elseBlock">CREAR CATEGORIA</button>
+          </h1>
+          <br>
+          <ng-template #elseBlock>
+
+            <h1 class="text-center">
+              <button class="btn btn-success btn-lg" role="button" (click)="Editar()">EDITAR</button>
+            </h1>
+            <button class="btn btn-primary btn-lg" role="button" (click)="Regresar()">REGRESAR</button>
+
+          </ng-template>
+        </div>
+
+
+      </form>
+
+    </div>
+  </div>
+
+</div>

@@ -1,11 +1,8 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {DashboardComponent} from './components/dashboard/dashboard.component';
-import {FacturasComponent} from './components/facturas/facturas.component';
 import {HomeComponent} from './components/home/home.component';
 import {LoginComponent} from './components/login/login.component';
-import {CategoriasComponent} from "./components/categorias/categorias.component";
-
 import {FacturatotalComponent} from "./components/facturas/facturatotal/facturatotal.component";
 import {FacturadespachadaComponent} from "./components/facturas/facturadespachada/facturadespachada.component";
 import {FacturaxdespacharComponent} from "./components/facturas/facturaxdespachar/facturaxdespachar.component";
@@ -80,24 +77,6 @@ const routes: Routes = [
     component: FacturaxdespacharComponent,
     //pathMatch: "full"
   },
-
-
-
-  {
-    path: "categoria",
-    component: CategoriasComponent,
-    //pathMatch: "full"
-  },
-  {
-    path: "categoria/:id",
-    component: CategoriasComponent,
-    //pathMatch: "full"
-  },
-
-
-
-
-
 ];
 
 @NgModule({

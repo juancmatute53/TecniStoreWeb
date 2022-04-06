@@ -2,9 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {Productos} from "../../../modelos/productos/productos";
 import {ProductosService} from "../../../modelos/productos/productos.service";
 import {ActivatedRoute, Router} from "@angular/router";
-import {Categoria} from "../../../categoria/categoria";
-import {CategoriaService} from "../../../categoria/categoria.service";
 import Swal from "sweetalert2";
+import {CategoriasService} from "../../../modelos/categorias/categorias.service";
+import {Categorias} from "../../../modelos/categorias/categorias";
 
 @Component({
   selector: 'app-formproducts',
@@ -13,10 +13,10 @@ import Swal from "sweetalert2";
 export class FormproductsComponent implements OnInit {
 
   public productos: Productos = new Productos();
-  categorias1: Categoria[] = []
+  categorias1: Categorias[] = []
 
 
-  constructor(private productosService: ProductosService, private router: Router, private activatedRoute: ActivatedRoute, private categoriasService: CategoriaService,) {
+  constructor(private productosService: ProductosService, private router: Router, private activatedRoute: ActivatedRoute, private categoriasService: CategoriasService,) {
   }
 
   ngOnInit(): void {
@@ -43,10 +43,8 @@ export class FormproductsComponent implements OnInit {
   }
 
   create(): void {
-
-    console.log(this.productos)
     this.productosService.create(this.productos).subscribe(productos => {
-        Swal.fire('Producto Creado', `Producto ${productos.nombre} creado con exito`, 'success')
+        Swal.fire('Producto Creado', `Producto ${productos.nombre}, creado con exito`, 'success')
         this.router.navigate(['/productos'])
         window.location.reload()
       }
@@ -54,8 +52,6 @@ export class FormproductsComponent implements OnInit {
   }
 
   Editar(): void {
-    console.log(this.productos
-    )
     this.productosService.updateProductos(this.productos).subscribe(
       productos => {
         Swal.fire('Producto modificado', `Producto ${productos.nombre} modificado con exito`, 'success')

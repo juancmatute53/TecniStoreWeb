@@ -23,9 +23,6 @@ import {MatOptionModule} from "@angular/material/core";
 import {MatSelectModule} from "@angular/material/select";
 import {FilterPipe} from './components/pipes/filter.pipe';
 import {PcategoriaPipe} from './components/pipes/pcategoria.pipe';
-import {CategoriaComponent} from './components/categoria/categoria.component';
-import {FormcategoriaComponent} from './components/categoria/formcategoria.component';
-import {CategoriasComponent} from './components/categorias/categorias.component';
 import {RestapiService} from './restapi.service';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatGridListModule} from "@angular/material/grid-list";
@@ -52,9 +49,6 @@ import { ListcategoriesComponent } from './components/administracion/categorias/
     FacturasComponent,
     FilterPipe,
     PcategoriaPipe,
-    CategoriaComponent,
-    FormcategoriaComponent,
-    CategoriasComponent,
     routingComponents,
     FacturaPipe,
     FacturatotalComponent,
