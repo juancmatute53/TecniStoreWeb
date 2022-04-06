@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {Detallepedido} from "../../modelos/detallepedido/detallepedido";
-import {Productos} from "../../productos/productos";
+import {Productos} from "../../modelos/productos/productos";
 import {Sqlcliente} from "../../modelos/sqlcliente/sqlcliente";
 import {ActivatedRoute} from "@angular/router";
 import {SqlclienteService} from "../../modelos/sqlcliente/sqlcliente.service";
 import {DetallepedidoService} from "../../modelos/detallepedido/detallepedido.service";
-import {ProductosService} from "../../productos/productos.service";
+import {ProductosService} from "../../modelos/productos/productos.service";
 
 @Component({
   selector: 'app-facturaxcliente',

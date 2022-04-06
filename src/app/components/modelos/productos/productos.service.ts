@@ -47,11 +47,4 @@ export class ProductosService {
     return this.http.get<Productos[]>(this.urlEndPoint+"/"+id);
   }
 
-  /*
-  getProductosById(id:number): Observable<Productos[]>{
-    console.log(this.http.get<Productos[]>(this.urlEndPoint+"/"+1))
-    return this.http.get<Productos[]>(this.urlEndPoint+"/"+id);
-
-  }*/
-
 }

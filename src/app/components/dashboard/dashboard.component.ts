@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Detallepedido} from "../modelos/detallepedido/detallepedido";
 import {DetallepedidoService} from "../modelos/detallepedido/detallepedido.service";
-import {Productos} from "../productos/productos";
-import {ProductosService} from "../productos/productos.service";
+import {Productos} from "../modelos/productos/productos";
+import {ProductosService} from "../modelos/productos/productos.service";
 import {ClienteService} from "../modelos/cliente/cliente.service";
 import {SqldetapedidoService} from "../modelos/sqldetapedido/sqldetapedido.service";
 

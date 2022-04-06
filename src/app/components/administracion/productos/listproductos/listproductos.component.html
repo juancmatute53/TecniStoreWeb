@@ -1,0 +1,43 @@
+<div class="p-3">
+  <input type="text" class="form-control" name="filterPost" placeholder="Buscador..." [(ngModel)]="filterPost">
+  <br>
+
+  <table class="table table-light ">
+    <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th>NOMBRE</th>
+      <th>IMAGEN</th>
+      <th>PRECIO</th>
+      <th>CATEGORIA</th>
+      <th>DESCRIPCION</th>
+      <th>ESTADO</th>
+      <th>STOCK</th>
+      <th>EDITAR</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let productos2 of vistaproductos | filter:filterPost">
+      <td>{{productos2.id_producto}}</td>
+      <td>{{productos2.nombre}}</td>
+      <td><img src="{{productos2.imagen}}" width="50px"></td>
+      <td> {{productos2.precio}} $</td>
+      <td>{{productos2.categoria}}</td>
+      <td>{{productos2.descripcion}}</td>
+      <td>
+        <mat-slide-toggle [checked]="productos2.estado" disabled>
+          ON
+        </mat-slide-toggle>
+      </td>
+      <td>{{productos2.stock}}
+      <td>
+        <button type="button" name="button" class="btn btn-warning"
+                routerLink="/productos/{{productos2.id_producto}}">EDITAR
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
