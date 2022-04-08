@@ -20,4 +20,11 @@ export class DespachadoService {
   getDespachado(): Observable<Despachado[]> {
     return this.http.get(this.urlEndPoint).pipe(map(response => response as Despachado[]));
   }
+
+  getDespachadito() {
+    return this.http.get(this.urlEndPoint).toPromise().then((data)=>{
+      return data
+    })
+  }
+
 }
