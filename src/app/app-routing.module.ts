@@ -9,6 +9,7 @@ import {FacturaxdespacharComponent} from "./components/facturas/facturaxdespacha
 import {FacturaxclienteComponent} from "./components/facturas/facturaxcliente/facturaxcliente.component";
 import {ProductsComponent} from "./components/administracion/productos/products.component";
 import {CategoriesComponent} from "./components/administracion/categorias/categories.component";
+import {GraficasComponent} from "./components/graficas/graficas.component";
 
 const routes: Routes = [
 
@@ -75,6 +76,11 @@ const routes: Routes = [
   {
     path: "facturaxdespachada",
     component: FacturaxdespacharComponent,
+    //pathMatch: "full"
+  },
+  {
+    path: "grafica",
+    component: GraficasComponent,
     //pathMatch: "full"
   },
 ];

@@ -37,6 +37,9 @@ import {CategoriesComponent} from './components/administracion/categorias/catego
 import {FormproductsComponent} from './components/administracion/productos/formproducts/formproducts.component';
 import { FormcategoriesComponent } from './components/administracion/categorias/formcategories/formcategories.component';
 import { ListcategoriesComponent } from './components/administracion/categorias/listcategories/listcategories.component';
+import { GraficasComponent } from './components/graficas/graficas.component';
+import {Chart} from "chart.js";
+import {NgxChartsModule} from "@swimlane/ngx-charts";
 
 
 @NgModule({
@@ -61,6 +64,7 @@ import { ListcategoriesComponent } from './components/administracion/categorias/
     FormproductsComponent,
     FormcategoriesComponent,
     ListcategoriesComponent,
+    GraficasComponent,
 
   ],
   imports: [
@@ -83,6 +87,7 @@ import { ListcategoriesComponent } from './components/administracion/categorias/
     MatSelectModule,
     MatSlideToggleModule,
     MatGridListModule,
+    NgxChartsModule,
   ],
   providers: [RestapiService],
   bootstrap: [AppComponent]

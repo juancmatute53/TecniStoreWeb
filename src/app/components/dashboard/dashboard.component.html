@@ -58,12 +58,12 @@
         <h1 class="text-center">{{tiendanombre}}</h1>
         <div class="row g-0">
           <div class="col-md-4">
-            <img src="https://cdn-icons-png.flaticon.com/512/994/994278.png" class="img-fluid rounded-start">
+            <img src="https://cdn-icons-png.flaticon.com/512/951/951764.png" class="img-fluid rounded-start">
           </div>
           <div class="col-md-8">
             <div class="card-body">
-              <h2 class="text-center">dato</h2>
-              <h2 class="text-center">dato</h2>
+              <h2 class="text-center">Numero de Facturas</h2>
+              <h2 class="text-center">{{totalfacturas}}</h2>
             </div>
           </div>
         </div>
@@ -72,8 +72,12 @@
 
   </div>
 
- 
-  
+  <div class="card border-dark text-white bg-primary rounded-2 mb-3">
+    <h1 class="text-center">{{tiendanombre}} - Cantidad de Productos</h1>
+    <div id="divChart">
+      <canvas id="myChart"></canvas>
+    </div>
+  </div>
 
 
 </div>
