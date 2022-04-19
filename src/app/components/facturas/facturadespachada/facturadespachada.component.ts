@@ -6,7 +6,8 @@ import {DespachadoService} from "../../modelos/despachado/despachado.service";
 
 @Component({
   selector: 'app-facturadespachada',
-  templateUrl: './facturadespachada.component.html'
+  templateUrl: './facturadespachada.component.html',
+  styleUrls: ['../facturas.component.css']
 })
 export class FacturadespachadaComponent implements OnInit {
   tiendanombre: string = "TECNISTORE";

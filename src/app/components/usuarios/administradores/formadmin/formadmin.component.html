@@ -1,0 +1,59 @@
+<div class="p-3">
+  <div class="card border-dark text-black bg-light rounded-2 mb-3">
+    <div class="p-4 ">
+      <form ngNativeValidate>
+        <div class="form-group row">
+          <mat-form-field appearance="legacy">
+            <mat-label for="nombre">USUARIO</mat-label>
+            <input matInput name="nombre" id="nombre" placeholder="USUARIO" [(ngModel)]="usuario.usuario" [readonly]>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group row">
+          <mat-form-field appearance="legacy">
+            <mat-label for="contrasena">CONTRASENA</mat-label>
+            <input matInput name="contrasena" id="contrasena" placeholder="CONTRASENA" [(ngModel)]="usuario.clave"
+                   required>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group row">
+          <mat-form-field appearance="legacy">
+            <mat-label for="ccontrasena">CONFIRMAR CONTRASENA</mat-label>
+            <input matInput name="ccontrasena" id="ccontrasena" placeholder="CONFIRMAR CONTRASENA" [(ngModel)]="ccontrasena"
+                   required>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group row">
+          <mat-form-field appearance="fill">
+            <mat-label>Estado</mat-label>
+            <mat-select [(ngModel)]="usuario.tipoUsuario" name="categorias" readonly>
+              <mat-option value="administrador">ADMINISTRADOR</mat-option>
+              <mat-option value="cliente">CLIENTE</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group row">
+          <h1 class="text-center">
+
+            <button *ngIf="!usuario.idUsuario else elseBlock" class="btn btn-success btn-lg" role="button" (click)="Regresar()">REGRESAR
+            </button>
+            <ng-template #elseBlock>
+              <h1 class="text-center">
+                <button class="btn btn-success btn-lg" role="button" (click)="Editar()">EDITAR</button>
+              </h1>
+              <button class="btn btn-primary btn-lg" role="button" (click)="Regresar()">REGRESAR</button>
+
+            </ng-template>
+          </h1>
+        </div>
+
+
+      </form>
+
+    </div>
+  </div>
+
+</div>

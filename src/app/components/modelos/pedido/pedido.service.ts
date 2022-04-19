@@ -8,8 +8,6 @@ import {Pedido} from "./pedido";
 })
 export class PedidoService {
 
-  //private urlEndPoint: string = "http://localhost:8080/pedido";
-
   private urlEndPoint: string = "https://tecnistoreaapi.rj.r.appspot.com:443/pedido";
 
   constructor(private http: HttpClient) {

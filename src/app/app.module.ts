@@ -35,11 +35,18 @@ import {ListproductosComponent} from './components/administracion/productos/list
 import {ProductsComponent} from './components/administracion/productos/products.component';
 import {CategoriesComponent} from './components/administracion/categorias/categories.component';
 import {FormproductsComponent} from './components/administracion/productos/formproducts/formproducts.component';
-import { FormcategoriesComponent } from './components/administracion/categorias/formcategories/formcategories.component';
-import { ListcategoriesComponent } from './components/administracion/categorias/listcategories/listcategories.component';
-import { GraficasComponent } from './components/graficas/graficas.component';
+import {FormcategoriesComponent} from './components/administracion/categorias/formcategories/formcategories.component';
+import {ListcategoriesComponent} from './components/administracion/categorias/listcategories/listcategories.component';
+import {GraficasComponent} from './components/graficas/graficas.component';
 import {Chart} from "chart.js";
 import {NgxChartsModule} from "@swimlane/ngx-charts";
+import {FooterComponent} from './components/footer/footer.component';
+import {ClientesComponent} from './components/usuarios/clientes/clientes.component';
+import { ListaclientesComponent } from './components/usuarios/clientes/listaclientes/listaclientes.component';
+import { AdministradoresComponent } from './components/usuarios/administradores/administradores.component';
+import { FormadminComponent } from './components/usuarios/administradores/formadmin/formadmin.component';
+import { ListadminComponent } from './components/usuarios/administradores/listadmin/listadmin.component';
+import { ClientesrolPipe } from './components/pipes/clientesrol.pipe';
 
 
 @NgModule({
@@ -65,6 +72,13 @@ import {NgxChartsModule} from "@swimlane/ngx-charts";
     FormcategoriesComponent,
     ListcategoriesComponent,
     GraficasComponent,
+    FooterComponent,
+    ClientesComponent,
+    ListaclientesComponent,
+    AdministradoresComponent,
+    FormadminComponent,
+    ListadminComponent,
+    ClientesrolPipe,
 
   ],
   imports: [

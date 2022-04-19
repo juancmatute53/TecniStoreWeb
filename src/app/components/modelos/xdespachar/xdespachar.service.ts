@@ -7,7 +7,6 @@ import {Xdespachar} from "./xdespachar";
   providedIn: 'root'
 })
 export class XdespacharService {
-  //private urlEndPoint: string = "http://localhost:8080/pedidosfalse"
 
   private urlEndPoint: string = "https://tecnistoreaapi.rj.r.appspot.com:443/pedidosfalse";
 

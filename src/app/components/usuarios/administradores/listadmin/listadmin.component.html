@@ -1,0 +1,45 @@
+<div class="p-3">
+  <input type="text" class="form-control" name="filterPost" placeholder="Buscador..." [(ngModel)]="filterpost">
+  <br>
+
+  <table class="table table-light">
+    <thead>
+    <tr>
+      <th scope="col">CEDULA</th>
+      <th>NOMBRE COMPLETO</th>
+      <th>TELEFONO</th>
+      <th>USUARIO</th>
+      <th>CONTRASENA</th>
+      <th>EDITAR</th>
+    </tr>
+    </thead>
+
+
+    <tbody>
+    <tr *ngFor="let clienterol1 of clienteRol |clientesrol: filterpost" >
+      <ng-container *ngIf="clienterol1.tipodeusuario == 'true'">
+
+        <td>{{clienterol1.cedula}} </td>
+        <td>{{clienterol1.nombre}} {{clienterol1.apellido}} </td>
+        <td>{{clienterol1.telefono}} </td>
+        <td>{{clienterol1.usuario}} </td>
+        <td>{{clienterol1.clave}} </td>
+        <td>
+          <button type="bytton" class="btn btn-warning" routerLink="/administradores/{{clienterol1.id_usuario}}">
+            EDITAR
+          </button>
+        </td>
+        <!--<td>
+        <button type="button" class="btn btn-warning" routerLink="/categorias/{{categoria.idCategoria}}">EDITAR</button>
+      </td>-->
+
+      </ng-container>
+
+    </tr>
+
+    </tbody>
+
+  </table>
+
+
+</div>

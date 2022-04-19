@@ -8,8 +8,6 @@ import {Sqldetapedido} from "./sqldetapedido";
 })
 export class SqldetapedidoService {
 
-  //private urlEndPoint: string = "http://localhost:8080/sqldetallepedido"
-
   private urlEndPoint: string ="https://tecnistoreaapi.rj.r.appspot.com:443/sqldetallepedido";
 
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'})

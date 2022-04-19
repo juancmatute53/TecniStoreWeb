@@ -1,33 +1,74 @@
-<div class="fon">
-  <div class="fondo">
-    <mat-toolbar color="basic">
-      <span><a mat-button routerLink="/dashboard">TecniStore</a></span>
-      <span class="example-spacer2"></span>
-
-      <a mat-stroked-button [matMenuTriggerFor]="administracion">Administracion</a>
-      <mat-menu #administracion="matMenu">
-        <a mat-menu-item routerLink="/productos">Productos</a>
-        <a mat-menu-item routerLink="/categorias">Categorias</a>
-      </mat-menu>
-      <span class="example-spacer2"></span>
-
-      <a mat-stroked-button [matMenuTriggerFor]="factura">Facturas</a>
-      <mat-menu #factura="matMenu">
-        <a mat-menu-item routerLink="/facturatotales">Todas las Facturas</a>
-        <a mat-menu-item routerLink="/facturadespachada">Facturas despachadas</a>
-        <a mat-menu-item routerLink="/facturaxdespachada">Facturas por despachar</a>
-      </mat-menu>
-      <span class="example-spacer2"></span>
-      <a mat-stroked-button routerLink="/grafica">Representacion Grafica</a>
-
-      <span class="example-spacer2"></span>
+<!---<nav class="navbar fixed-top navbar-expand-lg navbar-dark color">-->
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark color">
+  <div class="container-fluid ">
+    <span><a mat-button routerLink="/dashboard">TecniStore</a></span>
 
 
-      <span class="example-spacer"></span>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-      <a mat-raised-button color="warn" routerLink="/login">Salir</a>
-    </mat-toolbar>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a mat-stroked-button [matMenuTriggerFor]="administracion">Administracion</a>
+          <mat-menu #administracion="matMenu">
+            <a mat-menu-item routerLink="/productos">Productos <span
+              class="fondito">{{totalprouctos}}</span></a>
+            <a mat-menu-item routerLink="/categorias">Categorias <span
+              class="fondito">{{totalcategorias}}</span></a>
+          </mat-menu>
 
+
+        </li>
+        <div class="espacio"></div>
+
+        <li class="nav-item">
+          <a mat-stroked-button [matMenuTriggerFor]="factura">Facturas</a>
+          <mat-menu #factura="matMenu" class="letras">
+            <a mat-menu-item routerLink="/facturatotales">Todas las Facturas <span
+              class="fondito">{{totalFacturas}}</span></a>
+            <a mat-menu-item routerLink="/facturadespachada">Facturas despachadas <span
+              class="fondito">{{facturadespachada}}</span></a>
+            <a mat-menu-item routerLink="/facturaxdespachada">Facturas por despachar <span
+              class="fondito">{{facturaspordespachar}}</span> </a>
+          </mat-menu>
+
+        </li>
+        <div class="espacio"></div>
+        <li class="nav-item ">
+
+          <a mat-stroked-button routerLink="/grafica">Representacion Grafica</a>
+
+
+        </li>
+        <div class="espacio"></div>
+        <li class="nav-item">
+          <a mat-stroked-button [matMenuTriggerFor]="usuarios">Usuarios</a>
+          <mat-menu #usuarios="matMenu" class="letras">
+            <a mat-menu-item routerLink="/clientes">Clientes <span
+              class="fondito">{{totalclientes}}</span> </a>
+            <a mat-menu-item routerLink="/administradores">Administradores</a>
+          </mat-menu>
+
+        </li>
+
+
+      </ul>
+
+
+      <form class="d-flex">
+        <span class="example-spacer"></span>
+        <a mat-raised-button color="warn" routerLink="/login">Salir</a>
+      </form>
+
+    </div>
   </div>
 
-</div>
+</nav>
+
+
+
+
+

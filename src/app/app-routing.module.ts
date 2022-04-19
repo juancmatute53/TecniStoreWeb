@@ -10,6 +10,8 @@ import {FacturaxclienteComponent} from "./components/facturas/facturaxcliente/fa
 import {ProductsComponent} from "./components/administracion/productos/products.component";
 import {CategoriesComponent} from "./components/administracion/categorias/categories.component";
 import {GraficasComponent} from "./components/graficas/graficas.component";
+import {ClientesComponent} from "./components/usuarios/clientes/clientes.component";
+import {AdministradoresComponent} from "./components/usuarios/administradores/administradores.component";
 
 const routes: Routes = [
 
@@ -55,7 +57,6 @@ const routes: Routes = [
   },
 
 
-
   {
     path: "facturacliente/:cedula/:estado/:tienda/:fecha/:id",
     component: FacturaxclienteComponent,
@@ -83,6 +84,19 @@ const routes: Routes = [
     component: GraficasComponent,
     //pathMatch: "full"
   },
+  {
+    path: "clientes",
+    component: ClientesComponent,
+    //pathMatch: "full"
+  },
+  {
+    path: "administradores",
+    component: AdministradoresComponent
+  },
+  {
+    path: "administradores/:id",
+    component: AdministradoresComponent
+  }
 ];
 
 @NgModule({

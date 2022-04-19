@@ -1,0 +1,52 @@
+<div class="p-3">
+  <input type="text" class="form-control" name="filterPost" placeholder="Buscador..." [(ngModel)]="filterPost">
+  <br>
+
+  <table class="table table-light">
+    <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th>CEDULA</th>
+      <th>NOMBRE</th>
+      <th>APELLIDO</th>
+      <th>TELEFONO</th>
+      <th>DIRECCION</th>
+      <th>CORREO</th>
+      <th>FECHA NAC</th>
+      <th>ID USUARIO</th>
+      <th>ADMINISTRADOR</th>
+      <th>USUARIO</th>
+      <th>CONTRASENA</th>
+    </tr>
+    </thead>
+
+
+    <tbody>
+    <tr *ngFor="let clienterol1 of clienteRol | clientesrol:filterPost ">
+      <th>{{clienterol1.id_cliente}} </th>
+      <td>{{clienterol1.cedula}} </td>
+      <td>{{clienterol1.nombre}} </td>
+      <td>{{clienterol1.apellido}} </td>
+      <td>{{clienterol1.telefono}} </td>
+      <td>{{clienterol1.direccion}} </td>
+      <td>{{clienterol1.correo}} </td>
+      <td>{{clienterol1.fecha}} </td>
+      <td>{{clienterol1.id_usuario}} </td>
+      <td>
+
+        <mat-slide-toggle [checked]="clienterol1.tipodeusuario" type="button" (click)="Editar(clienterol1.id_usuario)">
+          ON
+        </mat-slide-toggle>
+
+      </td>
+      <td>{{clienterol1.usuario}} </td>
+      <td>{{clienterol1.clave}} </td>
+    </tr>
+
+
+    </tbody>
+
+  </table>
+
+
+</div>

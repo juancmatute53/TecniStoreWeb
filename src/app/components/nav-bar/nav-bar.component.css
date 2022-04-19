@@ -17,20 +17,41 @@
   flex: 0 100 100px;
 }
 
-.tamano{
+.tamano {
   font-size: 30px;
 }
 
-.example-spacer{
-    flex: 1 1 auto;
+.example-spacer {
+  flex: 1 1 auto;
 }
 
-.example-spacer2{
-    flex: .01  auto;
+.example-spacer2 {
+  flex: .01 auto;
 }
 
 
-.colores{
-  color: rgb(237, 237, 208);
-  background-color: rgb(237, 237, 208);
+.color {
+  background: #94B3FD;
+}
+
+a:hover {
+  background: #B983FF;
+  color: black;
+
+}
+
+mat-menu:hover {
+  background: #B983FF;
+
+}
+
+
+.espacio {
+  padding: 7px;
+}
+
+
+.fondito {
+  background: pink;
+  border-radius: 5px;
 }
