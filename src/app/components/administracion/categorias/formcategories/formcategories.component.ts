@@ -21,21 +21,12 @@ export class FormcategoriesComponent implements OnInit {
 
 
   Crear(): void {
-    if (this.categorias.nombre == "" && this.categorias.fotoUrl == "") {
-      this.categoriasService.createCategoria(this.categorias).subscribe(categorias => {
-        Swal.fire('Categoria Creada ', `Categoria: ${categorias.nombre}, creada con exito`, 'success')
-        this.router.navigate(['/categorias'])
-        window.location.reload()
-      })
-    } else {
-      Swal.fire('Campos vacios', `rellene todos los campos porfavor`, 'error')
-    }
-    /*
+
     this.categoriasService.createCategoria(this.categorias).subscribe(categorias => {
       Swal.fire('Categoria Creada ', `Categoria: ${categorias.nombre}, creada con exito`, 'success')
       this.router.navigate(['/categorias'])
       window.location.reload()
-    })*/
+    })
 
   }
 

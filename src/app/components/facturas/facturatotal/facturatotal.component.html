@@ -1,6 +1,9 @@
 <app-nav-bar></app-nav-bar>
 <div class="margen"></div>
 <div class="m-3">
+
+  <h1 class="text-center">FACTURA TOTALES </h1>
+
   <input type="text" class="form-control" name="filterPost" placeholder="Buscador..." [(ngModel)]="filterPost">
 </div>
 <div class="p-3">
@@ -21,18 +24,24 @@
           <table class="table ">
             <thead>
             <tr>
+              <th>CANTIDAD</th>
               <th>DESCRIPCION</th>
               <th>V. UNIT.</th>
               <th>v. TOTAL</th>
             </tr>
             </thead>
-            <tbody *ngFor="let sqldetallespedidos1 of sqldetallespedidos">
-            <tr *ngIf="sqldetallespedidos1.id_pedido  == sqlcliente.id_pedido ">
-              <th scope="row">{{sqldetallespedidos1.cantidad}}</th>
-              <td>{{sqldetallespedidos1.productos}}</td>
-              <td>{{sqldetallespedidos1.precio_unitario |currency}}</td>
-              <td>{{sqldetallespedidos1.precio_total |currency}}</td>
-            </tr>
+            <tbody>
+
+            <ng-container *ngFor="let sqldetallespedidos1 of sqldetallespedidos">
+              <tr *ngIf="sqldetallespedidos1.id_pedido  == sqlcliente.id_pedido ">
+                <th scope="row">{{sqldetallespedidos1.cantidad}}</th>
+                <td>{{sqldetallespedidos1.productos}}</td>
+                <td>{{sqldetallespedidos1.precio_unitario |currency}}</td>
+                <td>{{sqldetallespedidos1.precio_total |currency}}</td>
+
+              </tr>
+            </ng-container>
+
             </tbody>
             <tfoot>
             <tr>

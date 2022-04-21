@@ -1,6 +1,8 @@
 <app-nav-bar></app-nav-bar>
 <div class="margen"></div>
 <div class="m-3">
+  <h1 class="text-center">FACTURA POR DESPACHAR </h1>
+
   <input type="text" class="form-control" name="filterPost" placeholder="Buscador..." [(ngModel)]="filterPost">
 </div>
 <div class="p-3">
@@ -21,18 +23,23 @@
           <table class="table ">
             <thead>
             <tr>
+              <th>CANTIDAD</th>
               <th>DESCRIPCION</th>
               <th>V. UNIT.</th>
               <th>v. TOTAL</th>
             </tr>
             </thead>
-            <tbody *ngFor="let sqldetallespedidos1 of sqldetallespedidos">
-            <tr *ngIf="sqldetallespedidos1.id_pedido  == sqlcliente.id_pedido ">
-              <th scope="row">{{sqldetallespedidos1.cantidad}}</th>
-              <td>{{sqldetallespedidos1.productos}}</td>
-              <td>{{sqldetallespedidos1.precio_unitario |currency}}</td>
-              <td>{{sqldetallespedidos1.precio_total |currency}}</td>
-            </tr>
+            <tbody>
+            <ng-container *ngFor="let sqldetallespedidos1 of sqldetallespedidos">
+              <tr *ngIf="sqldetallespedidos1.id_pedido  == sqlcliente.id_pedido ">
+                <th scope="row">{{sqldetallespedidos1.cantidad}}</th>
+                <td>{{sqldetallespedidos1.productos}}</td>
+                <td>{{sqldetallespedidos1.precio_unitario |currency}}</td>
+                <td>{{sqldetallespedidos1.precio_total |currency}}</td>
+              </tr>
+            </ng-container>
+
+
             </tbody>
             <tfoot>
             <tr>
@@ -44,7 +51,7 @@
           </table>
           <br><br>
           <a
-            href="mailto:{{sqlcliente.correo}}?subject=Factura de compra de TECNISTORE&body=Hola%20{{sqlcliente.cliente}}%2C%20gracias%20por%20usar%20nuestro%20aplicativo.%0A%0AEn%20el%20siguiente%20enlace%20encontraras%20la%20informacion%20de%20tu%20factura%20http://localhost:4200/facturacliente/{{sqlcliente.cedula}}/enviado/tecnistore/{{sqlcliente.fecha}}/{{sqlcliente.id_pedido}}%0A%0A%C2%A9%20Copyright%20{{tiendanombre}}.%20%C2%AE%20Todos%20los%20derechos%20reservados%202022%0A%0A">
+            href="mailto:{{sqlcliente.correo}}?subject=Factura de compra de TECNISTORE&body=Hola%20{{sqlcliente.cliente}}%2C%20gracias%20por%20usar%20nuestro%20aplicativo.%0A%0AEn%20el%20siguiente%20enlace%20encontraras%20la%20informacion%20de%20tu%20factura%20https://juancmatute53.github.io/tecnistore.github.io/facturacliente/{{sqlcliente.cedula}}/enviado/tecnistore/{{sqlcliente.fecha}}/{{sqlcliente.id_pedido}}%0A%0A%C2%A9%20Copyright%20{{tiendanombre}}.%20%C2%AE%20Todos%20los%20derechos%20reservados%202022%0A%0A">
             <h1 class="text-center">
               <button type="submit" class="btn btn-warning" (click)="Editar(sqlcliente.id_pedido)">DESPACHAR</button>
             </h1>

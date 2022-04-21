@@ -101,7 +101,7 @@ export class DashboardComponent implements OnInit {
           data: {
             labels: this.nombre,
             datasets: [{
-              label: 'Precios',
+              label: 'STOCK: ',
 
               data: this.stock,
               backgroundColor: [

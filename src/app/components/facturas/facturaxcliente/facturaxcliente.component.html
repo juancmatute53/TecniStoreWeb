@@ -35,20 +35,23 @@
     </tr>
     </thead>
 
-    <tbody *ngFor="let detallepedido1 of detallepedido">
-    <tr *ngIf="detallepedido1.idPedido == sqlcliente.id_pedido">
-      <td class="qty">{{detallepedido1.cantidad}}</td>
+    <tbody>
+    <ng-container *ngFor="let detallepedido1 of detallepedido">
+      <tr *ngIf="detallepedido1.idPedido == sqlcliente.id_pedido">
+        <td class="qty">{{detallepedido1.cantidad}}</td>
 
-      <ng-container *ngFor="let productos1 of productos">
-        <td class="desc" *ngIf="detallepedido1.idProducto == productos1.idProducto">
-          {{productos1.nombre}}
-        </td>
-      </ng-container>
+        <ng-container *ngFor="let productos1 of productos">
+          <td class="desc" *ngIf="detallepedido1.idProducto == productos1.idProducto">
+            {{productos1.nombre}}
+          </td>
+        </ng-container>
 
-      <td class="unit">{{detallepedido1.precioUnitario |currency}}</td>
-      <td class="total">{{detallepedido1.cantidad * detallepedido1.precioUnitario |currency}}</td>
+        <td class="unit">{{detallepedido1.precioUnitario |currency}}</td>
+        <td class="total">{{detallepedido1.cantidad * detallepedido1.precioUnitario |currency}}</td>
 
-    </tr>
+      </tr>
+    </ng-container>
+
 
     </tbody>
 
