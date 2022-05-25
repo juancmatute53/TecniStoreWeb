@@ -37,11 +37,10 @@ export class FacturaxclienteComponent implements OnInit {
 
   ngOnInit(): void {
     this.cargarCliente();
-/*
+
     this.detallepedidoService.getDetallePedido().subscribe(
       detallepedido => this.detallepedido = detallepedido
     )
-*/
     this.productosService.getProducto().subscribe(
       productos => this.productos = productos
     )

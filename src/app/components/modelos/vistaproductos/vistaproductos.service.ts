@@ -10,7 +10,7 @@ import {Vistaproductos} from "./vistaproductos";
 export class VistaproductosService {
 
 
-  private urlEndPoint: string = "https://tecnistoreaapi.rj.r.appspot.com:443/vistaproductos";
+  private urlEndPoint: string = "http://localhost:8080/vistaproductos";
 
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'})
 

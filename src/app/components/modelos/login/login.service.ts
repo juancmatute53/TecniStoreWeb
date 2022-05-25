@@ -9,7 +9,7 @@ import {Login} from "./login";
 })
 export class LoginService {
 
-  private urlEndPoint: string = "https://tecnistoreaapi.rj.r.appspot.com:443/useradmin/login";
+  private urlEndPoint: string = "http://localhost:8080/useradmin/login";
 
   constructor(private http: HttpClient) {
   }
@@ -19,7 +19,7 @@ export class LoginService {
   }
 
   getEntrada(user: any, password: any): Observable<Login[]> {
-    return this.http.get(this.urlEndPoint + "/" + user +"/"+password).pipe(map(response => response as Login[]));
+    return this.http.get(this.urlEndPoint + "/" + user + "/" + password).pipe(map(response => response as Login[]));
 
   }
 

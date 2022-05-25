@@ -10,7 +10,7 @@ export class ClienteService {
 
   //private urlEndPoint: string = "http://localhost:8080/cliente";
 
-  private urlEndPoint: string = "https://tecnistoreaapi.rj.r.appspot.com:443/cliente";
+  private urlEndPoint: string = "http://localhost:8080/cliente";
 
   constructor(private http: HttpClient) {
   }

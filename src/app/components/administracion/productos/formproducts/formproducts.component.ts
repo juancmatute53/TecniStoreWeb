@@ -13,6 +13,7 @@ import {Categorias} from "../../../modelos/categorias/categorias";
 export class FormproductsComponent implements OnInit {
 
   public productos: Productos = new Productos();
+
   categorias1: Categorias[] = []
 
 

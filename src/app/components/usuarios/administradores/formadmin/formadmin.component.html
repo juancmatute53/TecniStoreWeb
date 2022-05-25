@@ -41,6 +41,7 @@
             <button *ngIf="!usuario.idUsuario else elseBlock" class="btn btn-success btn-lg" role="button" (click)="Regresar()">REGRESAR
             </button>
             <ng-template #elseBlock>
+
               <h1 class="text-center">
                 <button class="btn btn-success btn-lg" role="button" (click)="Editar()">EDITAR</button>
               </h1>
@@ -57,3 +58,5 @@
   </div>
 
 </div>
+
+

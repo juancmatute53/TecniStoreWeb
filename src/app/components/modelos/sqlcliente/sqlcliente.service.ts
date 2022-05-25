@@ -8,7 +8,7 @@ import {Sqlcliente} from "./sqlcliente";
 })
 export class SqlclienteService {
 
-  private urlEndPoint: string ="https://tecnistoreaapi.rj.r.appspot.com:443/sqlcliente";
+  private urlEndPoint: string ="http://localhost:8080/sqlcliente";
 
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'})
 

@@ -34,9 +34,14 @@
       <td>{{clienterol1.id_usuario}} </td>
       <td>
 
-        <mat-slide-toggle [checked]="clienterol1.tipodeusuario" type="button" (click)="Editar(clienterol1.id_usuario)">
-          SI
-        </mat-slide-toggle>
+        <a
+          href="mailto:{{clienterol1.correo}}?subject=ADMINISTRADOR&body=Hola%20{{clienterol1.nombre}}%20{{clienterol1.apellido}}%0A%0AMuchas%20gracias%20por%20formar%20parte%20de%20nuestra%20empresa%2C%20Estas%20seran%20sus%20credenciales%3A%0A%0AUSUARIO%3A%20{{clienterol1.usuario}}%0ACONTRASENA%3A%20{{clienterol1.clave}}%0A%0A%C2%A9%20Copyright%20TECNISTORE.%20%C2%AE%20Todos%20los%20derechos%20reservados%202022%0A%0A">
+          <mat-slide-toggle [checked]="clienterol1.tipodeusuario" type="button"
+                            (click)="Editar(clienterol1.id_usuario)">
+            SI
+          </mat-slide-toggle>
+
+        </a>
 
       </td>
       <td>{{clienterol1.usuario}} </td>

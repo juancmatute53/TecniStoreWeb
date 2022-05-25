@@ -8,7 +8,7 @@ import {Despachado} from "./despachado";
 })
 export class DespachadoService {
 
-  private urlEndPoint: string = "https://tecnistoreaapi.rj.r.appspot.com:443/pedidostrue";
+  private urlEndPoint: string = "http://localhost:8080/pedidostrue";
 
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'})
 

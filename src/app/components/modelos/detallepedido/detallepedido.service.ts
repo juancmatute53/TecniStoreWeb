@@ -8,7 +8,7 @@ import {Detallepedido} from "./detallepedido";
 })
 export class DetallepedidoService {
 
-  private urlEndPoint: string = "https://tecnistoreaapi.rj.r.appspot.com:443/detallepedido";
+  private urlEndPoint: string = "http://localhost:8080/detallepedido";
 
   constructor(private http: HttpClient) {
   }

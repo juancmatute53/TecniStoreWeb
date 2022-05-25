@@ -7,7 +7,7 @@ import {Usuario} from "./usuario";
 })
 export class UsuarioService {
 
-  private urlEndPoint: string = "https://tecnistoreaapi.rj.r.appspot.com:443/usuario";
+  private urlEndPoint: string = "http://localhost:8080/usuario";
 
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'})
 

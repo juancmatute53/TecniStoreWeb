@@ -8,7 +8,7 @@ import {Xdespachar} from "./xdespachar";
 })
 export class XdespacharService {
 
-  private urlEndPoint: string = "https://tecnistoreaapi.rj.r.appspot.com:443/pedidosfalse";
+  private urlEndPoint: string = "http://localhost:8080/pedidosfalse";
 
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'})
 
